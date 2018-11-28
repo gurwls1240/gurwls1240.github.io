@@ -82,7 +82,7 @@ function setValue() {
   var newValue1 = document.getElementById('newValue1').value;
   var newValue2 = document.getElementById('newValue2').value;
   var txid
-  simpleStorage.set(newValue, function(e,r){
+  simpleStorage.set(newValue,newValue,function(e,r){
     document.getElementById('result').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
     txid = r;
   });
@@ -94,6 +94,7 @@ function setValue() {
         document.getElementById('pending').innerHTML = '(기록된 블록: ' + r.blockNumber + ')';
         document.getElementById('pending').style.cssText ='color:green;';
         document.getElementById('storedData').style.cssText ='color:green; font-size:300%;';
+        document.getElementById('Data').style.cssText ='color:green; font-size:300%;';
         filter.stopWatching();
       }
    });
