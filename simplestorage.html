@@ -108,8 +108,8 @@ function getLink(addr) {
 }
 function getValue() {
   simpleStorage.get(function(e,r){
-    document.getElementById('storedData').innerHTML=r.toNumber();
-    document.getElementById('Data').innerHTML=(r+1).toNumber();
+    document.getElementById('storedData').innerHTML=r.toNumber()[0];
+    document.getElementById('Data').innerHTML=r.toNumber()[1];
   });
   web3.eth.getBlockNumber(function(e,r){
     document.getElementById('lastBlock').innerHTML = r;
