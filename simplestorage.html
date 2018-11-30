@@ -44,7 +44,7 @@ HTML 소스<br>
 <!-- script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script -->
 <script>
 var contractAddress = '0xda3ef147c1522d7a7cf99700deaf5ed16829f37c';
-var abi = [{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"type":"function","stateMutability":"nonpayable"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function","stateMutability":"view"},{"constant":false,"inputs":[{"name":"y","type":"uint256"}],"name":"set2","outputs":[],"payable":false,"type":"function","stateMutability":"nonpayable"},{"constant":true,"inputs":[],"name":"get2","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function","stateMutability":"view"}]);
+var abi = [{"constant":false,"inputs":[{"name":"x","type":"uint256"},{"name":"y","type":"uint256"}],"name":"set","outputs":[],"payable":false,"type":"function","stateMutability":"nonpayable"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"type":"function","stateMutability":"view"}]);
 var simpleStorageContract;
 var simpleStorage;
 window.addEventListener('load', function() {
