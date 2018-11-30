@@ -18,10 +18,13 @@
 <ul>
   <li>컨트랙트 주소: <span id="contractAddr"></span></li>
   <li>내 어카운트 주소: <span id="accountAddr"></span></li>
-  <li>컨트랙트에 저장된 값: <span id="storedData"></span></li>
-  <li>컨트랙트에 저장된 값2: <span id="Data"></span>
+  <li>컨트랙트에 저장된 값: <span id="storedData"></span>
     <button onclick="getValue()">새로고침</button> (현재블록: <span id="lastBlock"></span>)</li>
-  <li><input id="newValue1" type="text"><input id="newValue2" type="text"><button onclick="setValue()">새 값으로 저장하기</button>
+  <li><input id="newValue1" type="text"><button onclick="setValue()">새 값으로 저장하기</button>
+      <div id="result"></div></li>
+  <li>컨트랙트에 저장된 값2: <span id="Data"></span>
+    <button onclick="getValue2()">새로고침</button> (현재블록: <span id="lastBlock"></span>)</li>
+  <li><input id="newValue2" type="text"><button onclick="setValue2()">새 값으로 저장하기</button>
       <div id="result"></div></li>
   <li>새 값을 저장한 후 팬딩 트랜잭션이 블록에 포함되면 자동으로 페이지가 업데이트될 것입니다.</li>
 </ul>
@@ -71,8 +74,15 @@ function getLink(addr) {
 }
 function getValue() {
   simpleStorage.get(function(e,r){
-    document.getElementById('storedData').innerHTML=r[0].toNumber();
-    document.getElementById('Data').innerHTML=r[1].toNumber();
+    document.getElementById('storedData').innerHTML=r.toNumber();
+  });
+  web3.eth.getBlockNumber(function(e,r){
+    document.getElementById('lastBlock').innerHTML = r;
+  });
+}
+  function getValue2() {
+  simpleStorage.get2(function(e,r){
+    document.getElementById('Data').innerHTML=r.toNumber();
   });
   web3.eth.getBlockNumber(function(e,r){
     document.getElementById('lastBlock').innerHTML = r;
@@ -80,15 +90,35 @@ function getValue() {
 }
 function setValue() {
   var newValue1 = document.getElementById('newValue1').value;
-  var newValue2 = document.getElementById('newValue2').value;
   var txid
-  simpleStorage.set(newValue1,newValue2,function(e,r){
+  simpleStorage.set(newValue1,function(e,r){
     document.getElementById('result').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
     txid = r;
   });
   var filter = web3.eth.filter('latest');
   filter.watch(function(e, r) {
     getValue();
+    web3.eth.getTransaction(txid, function(e,r){
+      if (r != null && r.blockNumber > 0) {
+        document.getElementById('pending').innerHTML = '(기록된 블록: ' + r.blockNumber + ')';
+        document.getElementById('pending').style.cssText ='color:green;';
+        document.getElementById('storedData').style.cssText ='color:green; font-size:300%;';
+        document.getElementById('Data').style.cssText ='color:green; font-size:300%;';
+        filter.stopWatching();
+      }
+   });
+ });
+}
+  function setValue2() {
+  var newValue2 = document.getElementById('newValue2').value;
+  var txid
+  simpleStorage.set2(newValue2,function(e,r){
+    document.getElementById('result').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
+    txid = r;
+  });
+  var filter = web3.eth.filter('latest');
+  filter.watch(function(e, r) {
+    getValue2();
     web3.eth.getTransaction(txid, function(e,r){
       if (r != null && r.blockNumber > 0) {
         document.getElementById('pending').innerHTML = '(기록된 블록: ' + r.blockNumber + ')';
