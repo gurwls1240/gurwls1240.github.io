@@ -79,8 +79,7 @@ function getValue() {
   });
 }
 function setValue() {
-  var newValue[0] = document.getElementById('newValue[0]').value;
-  var newValue[1] = document.getElementById('newValue[1]').value;
+  var newValue = document.getElementById('newValue').value;
   var txid
   simpleStorage.set(newValue, function(e,r){
     document.getElementById('result').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
