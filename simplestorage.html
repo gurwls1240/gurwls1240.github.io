@@ -102,6 +102,16 @@ function getreviewValue() {
     document.getElementById('lastBlock').innerHTML = r;
   });
 }
+  function setlectureValue() {
+  var newstar = document.getElementById('newvideo').value;
+  var newcontent = document.getElementById('newproject').value;
+  simpleStorage.setlecture(newvideo, newproject);
+  }
+  function setpersonValue() {
+  var newstar = document.getElementById('newclass').value;
+  var newcontent = document.getElementById('newtitle').value;
+  simpleStorage.setperson(newclass, newtitle);
+  }
 function setreviewValue() {
   var newstar = document.getElementById('newstar').value;
   var newcontent = document.getElementById('newcontent').value;
