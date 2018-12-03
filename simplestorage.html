@@ -9,8 +9,8 @@
     body {margin-left:50px;}
     #storedData {font-size:300%; margin-right:10px;}
     #Data {font-size:300%; margin-right:10px;}
-    #newValue[0] {width: 200px; margin-right:10px; text-align:right;}
-    #newValue[1] {width: 200px; margin-right:10px; text-align:right;}
+    #newValue {width: 200px; margin-right:10px; text-align:right;}
+    #newnewValue {width: 200px; margin-right:10px; text-align:right;}
   </style>
 </head>
 <body>
@@ -21,7 +21,7 @@
   <li>컨트랙트에 저장된 값 storedData: <span id="storedData"></span></li>
   <li>컨트랙트에 저장된 값 Data : <span id="Data"></span>
     <button onclick="getValue()">새로고침</button> (현재블록: <span id="lastBlock"></span>)</li>
-  <li><input id="newValue" type="text"><button onclick="setValue()">새 값으로 저장하기</button>
+  <li><input id="newValue" type="text"><input id="newnewValue" type="text"><button onclick="setValue()">새 값으로 저장하기</button>
       <div id="result"></div></li>
   <li>새 값을 저장한 후 팬딩 트랜잭션이 블록에 포함되면 자동으로 페이지가 업데이트될 것입니다.</li>
 </ul>
