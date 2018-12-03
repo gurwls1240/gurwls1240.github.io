@@ -8,6 +8,7 @@
   <style>
     body {margin-left:50px;}
     #storedData {font-size:300%; margin-right:10px;}
+    #Data {font-size:300%; margin-right:10px;}
     #newValue {width: 200px; margin-right:10px; text-align:right;}
   </style>
 </head>
@@ -70,9 +71,8 @@ function getLink(addr) {
   return '<a target="_blank" href=https://testnet.etherscan.io/address/' + addr + '>' + addr +'</a>';
 }
 function getValue() {
-  simpleStorage.get(function(e,r1,r2){
-    document.getElementById('storedData').innerHTML=r1.toNumber();
-    document.getElementById('Data').innerHTML=r2.toNumber();
+  simpleStorage.get(function(e,r){
+    document.getElementById('Data').innerHTML=r.toNumber();
   });
   web3.eth.getBlockNumber(function(e,r){
     document.getElementById('lastBlock').innerHTML = r;
