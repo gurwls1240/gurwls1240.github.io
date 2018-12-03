@@ -88,7 +88,7 @@ function getreviewValue() {
     document.getElementById('content').innerHTML=r[1];
   });
   web3.eth.getBlockNumber(function(e,r){
-    document.getElementById('lastBlockreview').innerHTML = r;
+    document.getElementById('lastBlockreview').innerHTML = r; r++;
   });
 }
 
@@ -120,7 +120,7 @@ function setreviewValue() {
     document.getElementById('project').innerHTML=r[1];
   });
   web3.eth.getBlockNumber(function(e,r){
-    document.getElementById('lastBlocklecture').innerHTML = r;
+    document.getElementById('lastBlocklecture').innerHTML = r; r++;
   });
 }
 
@@ -152,7 +152,7 @@ function setlectureValue() {
     document.getElementById('title').innerHTML=r[1];
   });
   web3.eth.getBlockNumber(function(e,r){
-    document.getElementById('lastBlockperson').innerHTML = r;
+    document.getElementById('lastBlockperson').innerHTML = r; r++;
   });
 }
 
