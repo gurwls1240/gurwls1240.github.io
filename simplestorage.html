@@ -116,7 +116,7 @@ function setreviewValue() {
 }
   function getlectureValue() {
   simpleStorage.getlecture(function(e,r){
-    document.getElementById('video').innerHTML=r[0].toNumber();
+    document.getElementById('video').innerHTML=r[0];
     document.getElementById('project').innerHTML=r[1];
   });
   web3.eth.getBlockNumber(function(e,r){
@@ -148,7 +148,7 @@ function setlectureValue() {
 }
   function getpersonValue() {
   simpleStorage.getperson(function(e,r){
-    document.getElementById('class').innerHTML=r[0].toNumber();
+    document.getElementById('class').innerHTML=r[0];
     document.getElementById('title').innerHTML=r[1];
   });
   web3.eth.getBlockNumber(function(e,r){
@@ -166,7 +166,7 @@ function setpersonValue() {
   });
   var filter = web3.eth.filter('latest');
   filter.watch(function(e, r) {
-    getreviewValue();
+    getpersonValue();
     web3.eth.getTransaction(txid, function(e,r){
       if (r != null && r.blockNumber > 0) {
         document.getElementById('pending').innerHTML = '(기록된 블록: ' + r.blockNumber + ')';
