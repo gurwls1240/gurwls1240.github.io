@@ -18,8 +18,8 @@
 <ul>
   <li>컨트랙트 주소: <span id="contractAddr"></span></li>
   <li>내 어카운트 주소: <span id="accountAddr"></span></li>
-  <li>컨트랙트에 저장된 값data: <span id="Data"></span></li>
-  <li>컨트랙트에 저장된 값: <span id="storedData"></span>
+  <li>컨트랙트에 저장된 값 storedData: <span id="storedData"></span></li>
+  <li>컨트랙트에 저장된 값 Data : <span id="Data"></span>
     <button onclick="getValue()">새로고침</button> (현재블록: <span id="lastBlock"></span>)</li>
   <li><input id="newValue[0]" type="text"><input id="newValue[1]" type="text"><button onclick="setValue()">새 값으로 저장하기</button>
       <div id="result"></div></li>
@@ -79,9 +79,8 @@ function getValue() {
   });
 }
 function setValue() {
-  var newValue[2] = {0};
-  newValue[0] = document.getElementById('newValue[0]').value;
-  newValue[1] = document.getElementById('newValue[1]').value;
+  var newValue[0] = document.getElementById('newValue[0]').value;
+  var newValue[1] = document.getElementById('newValue[1]').value;
   var txid
   simpleStorage.set(newValue, function(e,r){
     document.getElementById('result').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
