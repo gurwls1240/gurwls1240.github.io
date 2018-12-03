@@ -20,19 +20,19 @@
   <li>내 어카운트 주소: <span id="accountAddr"></span></li>
   <li>컨트랙트에 저장된 값 강의 bytes32 video : <span id="video"></span></li>
   <li>컨트랙트에 저장된 값 강의 string project : <span id="project"></span>
-  <button onclick="getlectureValue()">새로고침</button></li>
+  <button onclick="getlectureValue()">새로고침</button>(현재블록: <span id="lastBlocklecture"></span>)</li>
   <li><input id="newvideo" type="text"><input id="newproject" type="text"><button onclick="setlectureValue()">새 값으로 저장하기</button>
-      <div id="result"></div></li>
+      <div id="resultlecture"></div></li>
   <li>컨트랙트에 저장된 값 사람 bytes32 class(업로드) : <span id="class"></span></li>
   <li>컨트랙트에 저장된 값 사람 string title(듣기) : <span id="title"></span>
-  <button onclick="getpersonValue()">새로고침</button></li>
+  <button onclick="getpersonValue()">새로고침</button>(현재블록: <span id="lastBlockperson"></span>)</li>
   <li><input id="newclass" type="text"><input id="newtitle" type="text"><button onclick="setpersonValue()">새 값으로 저장하기</button>
-      <div id="result"></div></li>
+      <div id="resultperson"></div></li>
   <li>컨트랙트에 저장된 값 강평 uint star : <span id="star"></span></li>
   <li>컨트랙트에 저장된 값 강평 string content : <span id="content"></span>
-    <button onclick="getreviewValue()">새로고침</button> (현재블록: <span id="lastBlock"></span>)</li>
+    <button onclick="getreviewValue()">새로고침</button> (현재블록: <span id="lastBlockreview"></span>)</li>
   <li><input id="newstar" type="text"><input id="newcontent" type="text"><button onclick="setreviewValue()">새 값으로 저장하기</button>
-      <div id="result"></div></li>
+      <div id="resultreview"></div></li>
   <li>새 값을 저장한 후 팬딩 트랜잭션이 블록에 포함되면 자동으로 페이지가 업데이트될 것입니다.</li>
 </ul>
 
@@ -81,56 +81,98 @@ function startApp() {
 function getLink(addr) {
   return '<a target="_blank" href=https://testnet.etherscan.io/address/' + addr + '>' + addr +'</a>';
 }
-  function getlectureValue() {
-  simpleStorage.getlecture(function(e,r){
-    document.getElementById('video').innerHTML=r[0].toNumber();
-    document.getElementById('project').innerHTML=r[1];
-  });
-  }
-    function getpersonValue() {
-  simpleStorage.getperson(function(e,r){
-    document.getElementById('class').innerHTML=r[0].toNumber();
-    document.getElementById('title').innerHTML=r[1];
-  });
-    }
+
 function getreviewValue() {
   simpleStorage.getreview(function(e,r){
     document.getElementById('star').innerHTML=r[0].toNumber();
     document.getElementById('content').innerHTML=r[1];
   });
   web3.eth.getBlockNumber(function(e,r){
-    document.getElementById('lastBlock').innerHTML = r;
+    document.getElementById('lastBlockreview').innerHTML = r;
   });
 }
-  function setlectureValue() {
-  var newstar = document.getElementById('newvideo').value;
-  var newcontent = document.getElementById('newproject').value;
-  simpleStorage.setlecture(newvideo, newproject);
-  }
-  function setpersonValue() {
-  var newstar = document.getElementById('newclass').value;
-  var newcontent = document.getElementById('newtitle').value;
-  simpleStorage.setperson(newclass, newtitle);
-  }
+
 function setreviewValue() {
   var newstar = document.getElementById('newstar').value;
   var newcontent = document.getElementById('newcontent').value;
   var txid
   simpleStorage.setreview(newstar, newcontent, function(e,r){
-    document.getElementById('result').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
+    document.getElementById('resultreview').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
     txid = r;
   });
   var filter = web3.eth.filter('latest');
   filter.watch(function(e, r) {
     getreviewValue();
-    getlectureValue();
-    getpersonValue();
     web3.eth.getTransaction(txid, function(e,r){
       if (r != null && r.blockNumber > 0) {
         document.getElementById('pending').innerHTML = '(기록된 블록: ' + r.blockNumber + ')';
         document.getElementById('pending').style.cssText ='color:green;';
         document.getElementById('star').style.cssText ='color:green; font-size:300%;';
         document.getElementById('content').style.cssText ='color:green; font-size:300%;';
+        filter.stopWatching();
+      }
+   });
+ });
+}
+  function getlectureValue() {
+  simpleStorage.getlecture(function(e,r){
+    document.getElementById('video').innerHTML=r[0].toNumber();
+    document.getElementById('project').innerHTML=r[1];
+  });
+  web3.eth.getBlockNumber(function(e,r){
+    document.getElementById('lastBlocklecture').innerHTML = r;
+  });
+}
+
+function setlectureValue() {
+  var newvideo = document.getElementById('newvideo').value;
+  var newproject = document.getElementById('newproject').value;
+  var txid
+  simpleStorage.setlecture(newvideo, newproject, function(e,r){
+    document.getElementById('resultlecture').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
+    txid = r;
+  });
+  var filter = web3.eth.filter('latest');
+  filter.watch(function(e, r) {
+    getlectureValue();
+    web3.eth.getTransaction(txid, function(e,r){
+      if (r != null && r.blockNumber > 0) {
+        document.getElementById('pending').innerHTML = '(기록된 블록: ' + r.blockNumber + ')';
+        document.getElementById('pending').style.cssText ='color:blue;';
+        document.getElementById('video').style.cssText ='color:blue; font-size:300%;';
+        document.getElementById('project').style.cssText ='color:blue; font-size:300%;';
+        filter.stopWatching();
+      }
+   });
+ });
+}
+  function getpersonValue() {
+  simpleStorage.getperson(function(e,r){
+    document.getElementById('class').innerHTML=r[0].toNumber();
+    document.getElementById('title').innerHTML=r[1];
+  });
+  web3.eth.getBlockNumber(function(e,r){
+    document.getElementById('lastBlockperson').innerHTML = r;
+  });
+}
+
+function setpersonValue() {
+  var newclass = document.getElementById('newclass').value;
+  var newtitle = document.getElementById('newtitle').value;
+  var txid
+  simpleStorage.setperson(newclass, newtitle, function(e,r){
+    document.getElementById('resultperson').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
+    txid = r;
+  });
+  var filter = web3.eth.filter('latest');
+  filter.watch(function(e, r) {
+    getreviewValue();
+    web3.eth.getTransaction(txid, function(e,r){
+      if (r != null && r.blockNumber > 0) {
+        document.getElementById('pending').innerHTML = '(기록된 블록: ' + r.blockNumber + ')';
+        document.getElementById('pending').style.cssText ='color:red;';
+        document.getElementById('class').style.cssText ='color:red; font-size:300%;';
+        document.getElementById('title').style.cssText ='color:red; font-size:300%;';
         filter.stopWatching();
       }
    });
