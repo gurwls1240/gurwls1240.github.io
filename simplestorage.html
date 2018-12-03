@@ -40,8 +40,8 @@ HTML 소스<br>
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 <!-- script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script -->
 <script>
-var contractAddress = '0x6dd992af4bd46a9fe68132dae92ef65dd97d1fa8';
-var abi = [{"constant":false,"inputs":[{"name":"_storedData","type":"uint256"},{"name":"_Data","type":"uint256"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"},{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"reviews","outputs":[{"name":"storedData","type":"uint256"},{"name":"Data","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"}];
+var contractAddress = '0x1ef138f52dfe55f643f1a24c90eab4f0919bcc6b';
+var abi = [{"constant":false,"inputs":[{"name":"_storedData","type":"uint256"},{"name":"_Data","type":"string"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"},{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"reviews","outputs":[{"name":"storedData","type":"uint256"},{"name":"Data","type":"string"}],"payable":false,"stateMutability":"view","type":"function"}];
 var simpleStorageContract;
 var simpleStorage;
 window.addEventListener('load', function() {
