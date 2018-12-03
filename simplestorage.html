@@ -81,6 +81,18 @@ function startApp() {
 function getLink(addr) {
   return '<a target="_blank" href=https://testnet.etherscan.io/address/' + addr + '>' + addr +'</a>';
 }
+  function getlectureValue() {
+  simpleStorage.getlecture(function(e,r){
+    document.getElementById('video').innerHTML=r[0].toNumber();
+    document.getElementById('project').innerHTML=r[1];
+  });
+  }
+    function getpersonValue() {
+  simpleStorage.getperson(function(e,r){
+    document.getElementById('class').innerHTML=r[0].toNumber();
+    document.getElementById('title').innerHTML=r[1];
+  });
+    }
 function getreviewValue() {
   simpleStorage.getreview(function(e,r){
     document.getElementById('star').innerHTML=r[0].toNumber();
@@ -94,13 +106,15 @@ function setreviewValue() {
   var newstar = document.getElementById('newstar').value;
   var newcontent = document.getElementById('newcontent').value;
   var txid
-  simpleStorage.setreview(newValue, newnewValue, function(e,r){
+  simpleStorage.setreview(newstar, newcontent, function(e,r){
     document.getElementById('result').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
     txid = r;
   });
   var filter = web3.eth.filter('latest');
   filter.watch(function(e, r) {
     getreviewValue();
+    getlectureValue();
+    getpersonValue();
     web3.eth.getTransaction(txid, function(e,r){
       if (r != null && r.blockNumber > 0) {
         document.getElementById('pending').innerHTML = '(기록된 블록: ' + r.blockNumber + ')';
