@@ -9,8 +9,8 @@
     body {margin-left:50px;}
     #star {font-size:300%; margin-right:10px;}
     #content {font-size:300%; margin-right:10px;}
-    #newValue {width: 200px; margin-right:10px; text-align:right;}
-    #newnewValue {width: 200px; margin-right:10px; text-align:right;}
+    #newstar {width: 200px; margin-right:10px; text-align:right;}
+    #newcontent {width: 200px; margin-right:10px; text-align:right;}
   </style>
 </head>
 <body>
@@ -18,10 +18,20 @@
 <ul>
   <li>컨트랙트 주소: <span id="contractAddr"></span></li>
   <li>내 어카운트 주소: <span id="accountAddr"></span></li>
-  <li>컨트랙트에 저장된 값 star: <span id="star"></span></li>
-  <li>컨트랙트에 저장된 값 content : <span id="content"></span>
+  <li>컨트랙트에 저장된 값 강의 bytes32 video : <span id="video"></span></li>
+  <li>컨트랙트에 저장된 값 강의 string project : <span id="project"></span>
+  <button onclick="getlectureValue()">새로고침</button></li>
+  <li><input id="newValue" type="text"><input id="newnewValue" type="text"><button onclick="setlectureValue()">새 값으로 저장하기</button>
+      <div id="result"></div></li>
+  <li>컨트랙트에 저장된 값 사람 bytes32 class(업로드) : <span id="class"></span></li>
+  <li>컨트랙트에 저장된 값 사람 string title(듣기) : <span id="title"></span>
+  <button onclick="getpersonValue()">새로고침</button></li>
+  <li><input id="newValue" type="text"><input id="newnewValue" type="text"><button onclick="setpersonValue()">새 값으로 저장하기</button>
+      <div id="result"></div></li>
+  <li>컨트랙트에 저장된 값 강평 uint star : <span id="star"></span></li>
+  <li>컨트랙트에 저장된 값 강평 string content : <span id="content"></span>
     <button onclick="getreviewValue()">새로고침</button> (현재블록: <span id="lastBlock"></span>)</li>
-  <li><input id="newValue" type="text"><input id="newnewValue" type="text"><button onclick="setreviewValue()">새 값으로 저장하기</button>
+  <li><input id="newstar" type="text"><input id="newcontent" type="text"><button onclick="setreviewValue()">새 값으로 저장하기</button>
       <div id="result"></div></li>
   <li>새 값을 저장한 후 팬딩 트랜잭션이 블록에 포함되면 자동으로 페이지가 업데이트될 것입니다.</li>
 </ul>
@@ -79,8 +89,8 @@ function getreviewValue() {
   });
 }
 function setreviewValue() {
-  var newValue = document.getElementById('newValue').value;
-  var newnewValue = document.getElementById('newnewValue').value;
+  var newstar = document.getElementById('newstar').value;
+  var newcontent = document.getElementById('newcontent').value;
   var txid
   simpleStorage.setreview(newValue, newnewValue, function(e,r){
     document.getElementById('result').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
