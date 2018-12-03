@@ -70,7 +70,8 @@ function getLink(addr) {
 }
 function getValue() {
   simpleStorage.get(function(e,r){
-    document.getElementById('storedData').innerHTML=r.toNumber();
+    document.getElementById('storedData').innerHTML=r[0].toNumber();
+    document.getElementById('Data').innerHTML=r[1].toNumber();
   });
   web3.eth.getBlockNumber(function(e,r){
     document.getElementById('lastBlock').innerHTML = r;
