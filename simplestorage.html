@@ -20,8 +20,8 @@
   <li>내 어카운트 주소: <span id="accountAddr"></span></li>
   <li>컨트랙트에 저장된 값 star: <span id="star"></span></li>
   <li>컨트랙트에 저장된 값 content : <span id="content"></span>
-    <button onclick="getValue()">새로고침</button> (현재블록: <span id="lastBlock"></span>)</li>
-  <li><input id="newValue" type="text"><input id="newnewValue" type="text"><button onclick="setValue()">새 값으로 저장하기</button>
+    <button onclick="getreviewValue()">새로고침</button> (현재블록: <span id="lastBlock"></span>)</li>
+  <li><input id="newValue" type="text"><input id="newnewValue" type="text"><button onclick="setreviewValue()">새 값으로 저장하기</button>
       <div id="result"></div></li>
   <li>새 값을 저장한 후 팬딩 트랜잭션이 블록에 포함되면 자동으로 페이지가 업데이트될 것입니다.</li>
 </ul>
@@ -40,8 +40,8 @@ HTML 소스<br>
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 <!-- script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script -->
 <script>
-var contractAddress = '0x1ef138f52dfe55f643f1a24c90eab4f0919bcc6b';
-var abi = [{"constant":false,"inputs":[{"name":"_storedData","type":"uint256"},{"name":"_Data","type":"string"}],"name":"set","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"},{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"reviews","outputs":[{"name":"storedData","type":"uint256"},{"name":"Data","type":"string"}],"payable":false,"stateMutability":"view","type":"function"}];
+var contractAddress = '0xa321d9b5687f43898cc4cc0414a68264b791ee9b';
+var abi = [{"constant":true,"inputs":[],"name":"getrecture","outputs":[{"name":"","type":"bytes32"},{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_class","type":"bytes32"},{"name":"_title","type":"string"}],"name":"setperson","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getreview","outputs":[{"name":"","type":"uint256"},{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"lectures","outputs":[{"name":"video","type":"bytes32"},{"name":"project","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_video","type":"bytes32"},{"name":"_project","type":"string"}],"name":"setlecture","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"getperson","outputs":[{"name":"","type":"bytes32"},{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"people","outputs":[{"name":"class","type":"bytes32"},{"name":"title","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_storedData","type":"uint256"},{"name":"_Data","type":"string"}],"name":"setreview","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"reviews","outputs":[{"name":"storedData","type":"uint256"},{"name":"Data","type":"string"}],"payable":false,"stateMutability":"view","type":"function"}];
 var simpleStorageContract;
 var simpleStorage;
 window.addEventListener('load', function() {
@@ -64,13 +64,13 @@ function startApp() {
   web3.eth.getAccounts(function(e,r){
     document.getElementById('accountAddr').innerHTML = getLink(r[0]);
   });
-  getValue();
+  getreviewValue();
 }
 function getLink(addr) {
   return '<a target="_blank" href=https://testnet.etherscan.io/address/' + addr + '>' + addr +'</a>';
 }
-function getValue() {
-  simpleStorage.get(function(e,r){
+function getreviewValue() {
+  simpleStorage.getreview(function(e,r){
     document.getElementById('star').innerHTML=r[0].toNumber();
     document.getElementById('content').innerHTML=r[1];
   });
@@ -78,17 +78,17 @@ function getValue() {
     document.getElementById('lastBlock').innerHTML = r;
   });
 }
-function setValue() {
+function setreviewValue() {
   var newValue = document.getElementById('newValue').value;
   var newnewValue = document.getElementById('newnewValue').value;
   var txid
-  simpleStorage.set(newValue, newnewValue, function(e,r){
+  simpleStorage.setreview(newValue, newnewValue, function(e,r){
     document.getElementById('result').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
     txid = r;
   });
   var filter = web3.eth.filter('latest');
   filter.watch(function(e, r) {
-    getValue();
+    getreviewValue();
     web3.eth.getTransaction(txid, function(e,r){
       if (r != null && r.blockNumber > 0) {
         document.getElementById('pending').innerHTML = '(기록된 블록: ' + r.blockNumber + ')';
