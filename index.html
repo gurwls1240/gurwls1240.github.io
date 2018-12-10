@@ -311,7 +311,7 @@
 					<div class="feature text-center trans_400">
 						<div class="feature_icon"><img src="images/icon_4.png" alt=""></div>
 						<h3 class="feature_title">Award & Reward</h3>
-						<div class="feature_text"><p>매주 최고의 강사와 학생을 뽑아 시상하여 동기를 부여해주어 플랫폼을 활성화시킵니다.</p></div>
+						<div class="feature_text"><p>매주 최고의 강사와 학생을 시상하여 동기를 부여하고 플랫폼을 활성화시킵니다.</p></div>
 					</div>
 				</div>
 
@@ -328,7 +328,7 @@
 				<div class="col">
 					<div class="section_title_container text-center">
 						<h2 class="section_title">Popular Online Courses</h2>
-						<div class="section_subtitle"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel gravida arcu. Vestibulum feugiat, sapien ultrices fermentum congue, quam velit venenatis sem</p></div>
+						<div class="section_subtitle"><p>좋은 평점을 받고 많은 학생들이 수강함으로써 인기있는 강의에 선정된 강의들 입니다.</p></div>
 					</div>
 				</div>
 			</div>
@@ -340,22 +340,22 @@
 						<div class="course_image"><img src="images/course_1.jpg" alt=""></div>
 						<div class="course_body">
 							<h3 class="course_title"><a href="course.html">Software Training</a></h3>
-							<div class="course_teacher">Mr. John Taylor</div>
+							<div class="course_teacher">서혁진( 닉네임 받아서 리턴 )</div> //닉네임 받아서 리턴
 							<div class="course_text">
-								<p>Lorem ipsum dolor sit amet, consectetur adipi elitsed do eiusmod tempor</p>
+								<p>강사가 등록한 강의소개 한줄 리턴</p>
 							</div>
 						</div>
 						<div class="course_footer">
 							<div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
 								<div class="course_info">
 									<i class="fa fa-graduation-cap" aria-hidden="true"></i>
-									<span>20 Student</span>
+									<span>20 Student</span> // 수강신청할때 ++하여 학생수 저장한 값 리턴
 								</div>
 								<div class="course_info">
 									<i class="fa fa-star" aria-hidden="true"></i>
-									<span>5 Ratings</span>
+									<span>5 Ratings</span> // 리뷰에 표시되는 평점들 평균내서 리턴
 								</div>
-								<div class="course_price ml-auto">$130</div>
+								<div class="course_price ml-auto">$130</div> // 강사가 정하는 값, 영상 올릴때 저장한 값 리턴.
 							</div>
 						</div>
 					</div>
@@ -367,7 +367,7 @@
 						<div class="course_image"><img src="images/course_2.jpg" alt=""></div>
 						<div class="course_body">
 							<h3 class="course_title"><a href="course.html">Developing Mobile Apps</a></h3>
-							<div class="course_teacher">Ms. Lucius</div>
+							<div class="course_teacher">황보현</div>
 							<div class="course_text">
 								<p>Lorem ipsum dolor sit amet, consectetur adipi elitsed do eiusmod tempor</p>
 							</div>
@@ -376,11 +376,11 @@
 							<div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
 								<div class="course_info">
 									<i class="fa fa-graduation-cap" aria-hidden="true"></i>
-									<span>20 Student</span>
+									<span>200 Student</span>
 								</div>
 								<div class="course_info">
 									<i class="fa fa-star" aria-hidden="true"></i>
-									<span>5 Ratings</span>
+									<span>4 Ratings</span>
 								</div>
 								<div class="course_price ml-auto">Free</div>
 							</div>
@@ -394,7 +394,7 @@
 						<div class="course_image"><img src="images/course_3.jpg" alt=""></div>
 						<div class="course_body">
 							<h3 class="course_title"><a href="course.html">Starting a Startup</a></h3>
-							<div class="course_teacher">Mr. Charles</div>
+							<div class="course_teacher">서혁진황보현</div>
 							<div class="course_text">
 								<p>Lorem ipsum dolor sit amet, consectetur adipi elitsed do eiusmod tempor</p>
 							</div>
@@ -403,11 +403,11 @@
 							<div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
 								<div class="course_info">
 									<i class="fa fa-graduation-cap" aria-hidden="true"></i>
-									<span>20 Student</span>
+									<span>5 Student</span>
 								</div>
 								<div class="course_info">
 									<i class="fa fa-star" aria-hidden="true"></i>
-									<span>5 Ratings</span>
+									<span>3 Ratings</span>
 								</div>
 								<div class="course_price ml-auto"><span>$320</span>$220</div>
 							</div>
@@ -418,7 +418,7 @@
 			</div>
 			<div class="row">
 				<div class="col">
-					<div class="courses_button trans_200"><a href="#">view all courses</a></div>
+					<div class="courses_button trans_200"><a href="#">view all courses</a></div> // 강의목록들쭉있는페이지하나개설
 				</div>
 			</div>
 		</div>
@@ -476,7 +476,7 @@
 						<form class="counter_form_content d-flex flex-column align-items-center justify-content-center" action="#">
 							<div class="counter_form_title">Sign In</div>
 							<input type="text" class="counter_input" placeholder="Your account address:" required="required">
-							<!--<input type="tel" class="counter_input" placeholder="Phone:" required="required">
+							<input type="text" class="counter_input" placeholder="Nickname:" required="required">
 							<!--<select name="counter_select" id="counter_select" class="counter_input counter_options">
 								<option>Choose Subject</option>
 								<option>Subject</option>
@@ -502,7 +502,7 @@
 				<div class="col">
 					<div class="section_title_container text-center">
 						<h2 class="section_title">Upcoming events</h2>
-						<div class="section_subtitle"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel gravida arcu. Vestibulum feugiat, sapien ultrices fermentum congue, quam velit venenatis sem</p></div>
+						<div class="section_subtitle"><p>이론뿐만 아니라 실질적인 경험을 해보고 싶은 학생들을 위한 스터디 모집 공고를 표시합니다.</p></div>
 					</div>
 				</div>
 			</div>
@@ -515,17 +515,17 @@
 						<div class="event_body d-flex flex-row align-items-start justify-content-start">
 							<div class="event_date">
 								<div class="d-flex flex-column align-items-center justify-content-center trans_200">
-									<div class="event_day trans_200">21</div>
-									<div class="event_month trans_200">Aug</div>
+									<div class="event_day trans_200">20</div>  //스터디 모집 마감일
+									<div class="event_month trans_200">Dec</div>  //스터디 모집 마감일
 								</div>
 							</div>
 							<div class="event_content">
-								<div class="event_title"><a href="#">Which Country Handles Student Debt?</a></div>
+								<div class="event_title"><a href="#">블록체인 Dapp 설계를 해보고 싶으신 분</a></div> // 스터디 이름
 								<div class="event_info_container">
-									<div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>15.00 - 19.30</span></div>
-									<div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>25 New York City</span></div>
+									<div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>15.00 - 19.30</span></div> // 스터디 시간
+									<div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>25 Sejong Univ.</span></div> // 스터디 위치
 									<div class="event_text">
-										<p>Policy analysts generally agree on a need for reform, but not on which path...</p>
+										<p>Dapp을 설계해봄으로써 4차 산업혁명의 핵심기술인 블록체인을 연구한다.</p> // 스터디 내용
 									</div>
 								</div>
 							</div>
@@ -540,17 +540,17 @@
 						<div class="event_body d-flex flex-row align-items-start justify-content-start">
 							<div class="event_date">
 								<div class="d-flex flex-column align-items-center justify-content-center trans_200">
-									<div class="event_day trans_200">27</div>
-									<div class="event_month trans_200">Aug</div>
+									<div class="event_day trans_200">18</div> // 스터디 모집 마감일
+									<div class="event_month trans_200">Dec</div> // 스터디 모집 마감일
 								</div>
 							</div>
 							<div class="event_content">
-								<div class="event_title"><a href="#">Repaying your student loans (Winter 2017-2018)</a></div>
+								<div class="event_title"><a href="#">Repaying your student loans (Winter 2017-2018)</a></div>  // 스터디 이름
 								<div class="event_info_container">
-									<div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>09.00 - 17.30</span></div>
-									<div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>25 Brooklyn City</span></div>
+									<div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>09.00 - 17.30</span></div> // 스터디 시간
+									<div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>25 Brooklyn City</span></div> // 스터디 위치
 									<div class="event_text">
-										<p>This Consumer Action News issue covers topics now being debated before...</p>
+										<p>This Consumer Action News issue covers topics now being debated before...</p> // 스터디 내용
 									</div>
 								</div>
 							</div>
@@ -565,17 +565,17 @@
 						<div class="event_body d-flex flex-row align-items-start justify-content-start">
 							<div class="event_date">
 								<div class="d-flex flex-column align-items-center justify-content-center trans_200">
-									<div class="event_day trans_200">01</div>
-									<div class="event_month trans_200">Sep</div>
+									<div class="event_day trans_200">12</div> // 스터디 모집 마감일
+									<div class="event_month trans_200">Dec</div> // 스터디 모집 마감일
 								</div>
 							</div>
 							<div class="event_content">
-								<div class="event_title"><a href="#">Alternative data and financial inclusion</a></div>
+								<div class="event_title"><a href="#">Alternative data and financial inclusion</a></div>  // 스터디 이름
 								<div class="event_info_container">
-									<div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>13.00 - 18.30</span></div>
-									<div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>25 New York City</span></div>
+									<div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>13.00 - 18.30</span></div> // 스터디 시간
+									<div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>25 New York City</span></div> // 스터디 위치
 									<div class="event_text">
-										<p>Policy analysts generally agree on a need for reform, but not on which path...</p>
+										<p>Policy analysts generally agree on a need for reform, but not on which path...</p> // 스터디 
 									</div>
 								</div>
 							</div>
