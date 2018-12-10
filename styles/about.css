@@ -1154,7 +1154,7 @@ section
 	padding-left: 0;
 	padding-right: 6px;
 }
-.team_col:nth-child(5n) .team_item
+.team_col:nth-child(4n) .team_item
 {
 	padding-left: 6px;
 	padding-right: 0;
