@@ -498,15 +498,6 @@ function totalSupplyValue() {
     document.getElementById('lastBlock').innerHTML = r; r++;
   });
 }  
-
-  function balanceOfValue() {
-  simpleStorage3.balanceOf(owners, function(e,r){
-    document.getElementById('_balances[owners]').innerHTML=r;
-  });
-  web3.eth.getBlockNumber(function(e,r){
-    document.getElementById('lastBlock').innerHTML = r; r++;
-  });
-} 
 	
 function getValue() {
   simpleStorage.get(function(e,r){
