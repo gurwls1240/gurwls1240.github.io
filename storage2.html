@@ -151,7 +151,7 @@ function setValue() {
  });
 }
 function getreviewValue() {
-  simpleStorage.getreview(function(e,r){
+  simpleStorage2.getreview(function(e,r){
     document.getElementById('star').innerHTML=r[0].toNumber();
     document.getElementById('content').innerHTML=r[1];
   });
@@ -163,7 +163,7 @@ function setreviewValue() {
   var newstar = document.getElementById('newstar').value;
   var newcontent = document.getElementById('newcontent').value;
   var txid
-  simpleStorage.setreview(newstar, newcontent, function(e,r){
+  simpleStorage2.setreview(newstar, newcontent, function(e,r){
     document.getElementById('resultreview').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
     txid = r;
   });
@@ -182,7 +182,7 @@ function setreviewValue() {
  });
 }
   function getlectureValue() {
-  simpleStorage.getrecture(function(e,r){
+  simpleStorage2.getrecture(function(e,r){
     document.getElementById('video').innerHTML=r[0];
     document.getElementById('project').innerHTML=r[1];
   });
@@ -194,7 +194,7 @@ function setlectureValue() {
   var newvideo = document.getElementById('newvideo').value;
   var newproject = document.getElementById('newproject').value;
   var txid
-  simpleStorage.setlecture(newvideo, newproject, function(e,r){
+  simpleStorage2.setlecture(newvideo, newproject, function(e,r){
     document.getElementById('resultlecture').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
     txid = r;
   });
@@ -213,7 +213,7 @@ function setlectureValue() {
  });
 }
   function getpersonValue() {
-  simpleStorage.getperson(function(e,r){
+  simpleStorage2.getperson(function(e,r){
     document.getElementById('class').innerHTML=r[0];
     document.getElementById('title').innerHTML=r[1];
   });
@@ -226,7 +226,7 @@ function setpersonValue() {
   var newclass = document.getElementById('newclass').value;
   var newtitle = document.getElementById('newtitle').value;
   var txid
-  simpleStorage.setperson(newclass, newtitle, function(e,r){
+  simpleStorage2.setperson(newclass, newtitle, function(e,r){
     document.getElementById('resultperson').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
     txid = r;
   });
