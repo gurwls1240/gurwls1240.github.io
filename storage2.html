@@ -108,7 +108,7 @@ function startApp() {
   
 function startApp2() {
   simpleStorageContract2 = web3.eth.contract(abi2);
-  simpleStorage2 = simpleStorageContract.at(contractAddress2);
+  simpleStorage2 = simpleStorageContract2.at(contractAddress2);
   document.getElementById('contractAddr2').innerHTML = getLink(contractAddress2);
   
   web3.eth.getAccounts(function(e,r){
