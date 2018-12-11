@@ -463,7 +463,7 @@ function getLink(addr) {
   
 function nameValue() {
   simpleStorage3.name(function(e,r){
-    document.getElementById('_name').innerHTML=r[0];
+    document.getElementById('_name').innerHTML=r;
   });
   web3.eth.getBlockNumber(function(e,r){
     document.getElementById('lastBlock').innerHTML = r; r++;
@@ -471,7 +471,7 @@ function nameValue() {
 }  
  function symbolValue() {
   simpleStorage3.symbol(function(e,r){
-    document.getElementById('_symbol').innerHTML=r[0];
+    document.getElementById('_symbol').innerHTML=r;
   });
   web3.eth.getBlockNumber(function(e,r){
     document.getElementById('lastBlock').innerHTML = r; r++;
