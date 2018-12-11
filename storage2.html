@@ -30,7 +30,9 @@
   <li>컨트랙트 주소2: <span id="contractAddr2"></span></li>
   <li>컨트랙트 주소3: <span id="contractAddr3"></span></li>
   <li>내 어카운트 주소: <span id="accountAddr"></span></li>
-  <li>내 어카운트 주소: <span id="_name"></span></li>
+  <li>토큰 이름: <span id="_name"></span></li>
+  <li>토큰 이름: <span id="_symbol"></span></li>
+  <li>토큰 이름: <span id="_decimals"></span></li>
   
   <li>컨트랙트에 저장된 값: <span id="storedData"></span>
   <button onclick="getValue()">새로고침</button> (현재블록: <span id="lastBlock"></span>)</li>
@@ -451,7 +453,6 @@ function startApp3() {
   });
   nameValue();
   totalSupplyValue();
-  INITIAL_SUPPLYValue();
   decimalsValue();
   symbolValue();
 }
@@ -468,8 +469,30 @@ function nameValue() {
     document.getElementById('lastBlock').innerHTML = r; r++;
   });
 }  
-  
-  
+ function symbolValue() {
+  simpleStorage3.symbol(function(e,r){
+    document.getElementById('_symbol').innerHTML=r.toNumber();
+  });
+  web3.eth.getBlockNumber(function(e,r){
+    document.getElementById('lastBlock').innerHTML = r; r++;
+  });
+} 
+function decimalsValue() {
+  simpleStorage3.decimals(function(e,r){
+    document.getElementById('_decimals').innerHTML=r.toNumber();
+  });
+  web3.eth.getBlockNumber(function(e,r){
+    document.getElementById('lastBlock').innerHTML = r; r++;
+  });
+}  
+function totalSupplyValue() {
+  simpleStorage3.totalSupply(function(e,r){
+    document.getElementById('_totalSupply').innerHTML=r.toNumber();
+  });
+  web3.eth.getBlockNumber(function(e,r){
+    document.getElementById('lastBlock').innerHTML = r; r++;
+  });
+}    
   
 function getValue() {
   simpleStorage.get(function(e,r){
