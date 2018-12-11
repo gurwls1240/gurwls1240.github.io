@@ -498,6 +498,7 @@ function totalSupplyValue() {
   });
 }  
 function balanceOfValue() {
+  var owner;
   simpleStorage3.balanceOf(owner, function(e,r){
     document.getElementById('_balances[owner]').innerHTML=r.toNumber();
   });
