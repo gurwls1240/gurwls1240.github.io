@@ -13,6 +13,7 @@
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.2.3/milligram.min.css">
 </head>
 <body>
 
@@ -475,7 +476,7 @@
 					<div class="col fill_height">
 						<form class="counter_form_content d-flex flex-column align-items-center justify-content-center" action="#">
 							<div class="counter_form_title">Sign In</div>
-							<input type="text" class="counter_input" placeholder="Your account address:" required="required">
+							<input id="newValue" type="text" class="counter_input" placeholder="Your account address:" required="required">
 							<input type="text" class="counter_input" placeholder="Nickname:" required="required">
 							<!--<select name="counter_select" id="counter_select" class="counter_input counter_options">
 								<option>Choose Subject</option>
@@ -484,7 +485,7 @@
 								<option>Subject</option>
 							</select>
 							Counter <textarea class="counter_input counter_text_input" placeholder="Message:" required="required"></textarea> -->
-							<button type="submit" class="counter_form_button">submit now</button>
+							<button type="submit" class="counter_form_button" onclick="setValue()">submit now</button>
 						</form>
 					</div>
 				</div>
@@ -916,4 +917,67 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="js/custom.js"></script>
 </body>
+	
+<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+	
+<script>
+var contractAddress = '0xde856446a16a7c24a9819767be3d05583aa3063d';
+var abi = [{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"}];
+var simpleStorageContract;
+var simpleStorage;
+window.addEventListener('load', function() {
+  // Checking if Web3 has been injected by the browser (Mist/MetaMask)
+  if (typeof web3 !== 'undefined') {
+    // Use Mist/MetaMask's provider
+    window.web3 = new Web3(web3.currentProvider);
+  } else {
+    console.log('No web3? You should consider trying MetaMask!')
+    // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+    window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+  }
+  // Now you can start your app & access web3 freely:
+  startApp();
+});
+function startApp() {
+  simpleStorageContract = web3.eth.contract(abi);
+  simpleStorage = simpleStorageContract.at(contractAddress);
+  document.getElementById('contractAddr').innerHTML = getLink(contractAddress);
+  web3.eth.getAccounts(function(e,r){
+    document.getElementById('accountAddr').innerHTML = getLink(r[0]);
+  });
+  getValue();
+}
+function getLink(addr) {
+  return '<a target="_blank" href=https://testnet.etherscan.io/address/' + addr + '>' + addr +'</a>';
+}
+function getValue() {
+  simpleStorage.get(function(e,r){
+    document.getElementById('storedData').innerHTML=r.toNumber();
+  });
+  web3.eth.getBlockNumber(function(e,r){
+    document.getElementById('lastBlock').innerHTML = r;
+  });
+}
+function setValue() {
+  var newValue = document.getElementById('newValue').value;
+  var txid
+  simpleStorage.set(newValue, function(e,r){
+    document.getElementById('result').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
+    txid = r;
+  });
+  var filter = web3.eth.filter('latest');
+  filter.watch(function(e, r) {
+    getValue();
+    web3.eth.getTransaction(txid, function(e,r){
+      if (r != null && r.blockNumber > 0) {
+        document.getElementById('pending').innerHTML = '(기록된 블록: ' + r.blockNumber + ')';
+        document.getElementById('pending').style.cssText ='color:green;';
+        document.getElementById('storedData').style.cssText ='color:green; font-size:300%;';
+        filter.stopWatching();
+      }
+   });
+ });
+}
+</script>
+	
 </html>
