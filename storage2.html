@@ -21,7 +21,7 @@
     #newproject {width: 200px; margin-right:10px; text-align:right;}
     #newclass {width: 200px; margin-right:10px; text-align:right;}
     #newtitle {width: 200px; margin-right:10px; text-align:right;}
-	  #myaddr {width: 200px; margin-right:10px; text-align:right;}
+    #myaddr {width: 200px; margin-right:10px; text-align:right;}
     #newmyaddr {width: 200px; margin-right:10px; text-align:right;}
   </style>
 </head>
@@ -52,7 +52,7 @@
 	<li>토큰 소유량: <span id="_balances["0xff468dc9Ac7ff385dF357CbcF4B5826d87c5dec8"]"></span></li>
 	<li>토큰 소유량: <span id="_balances(0xff468dc9Ac7ff385dF357CbcF4B5826d87c5dec8)"></span></li> -->
 	
-	<li>입력한 주소값 : <span id="myaddr"></span>
+  <li>입력한 주소값 : <span id="myaddr"></span>
   <button onclick="getaddrValue()">새로고침</button> (현재블록: <span id="lastBlock"></span>)</li>
   <li><input id="newmyaddr" type="text"><button onclick="setaddrValue()">새 값으로 저장하기</button>
       <div id="resultaddr"></div></li>
@@ -477,7 +477,7 @@ window.addEventListener('load', function() {
   startApp();
   startApp2();
   startApp3();
-	startApp4();
+  startApp4();
 });
 
 function startApp() {
@@ -517,8 +517,9 @@ function startApp3() {
   decimalsValue();
   symbolValue();
 }
-	function startApp4() {
- inputaddrContract = web3.eth.contract(abi4);
+	
+function startApp4() {
+  inputaddrContract = web3.eth.contract(abi4);
   inputaddr = inputaddrContract.at(contractAddress4);
   document.getElementById('contractAddr4').innerHTML = getLink(contractAddress4);
  
