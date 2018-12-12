@@ -39,6 +39,8 @@
 	<li>마스터계좌: <span id="ownerbal"></span></li>
 	 <li>사용자계좌: <button onclick="simpleStorage3.balanceOf(owner2,function(e,r){document.getElementById('ownerbal2').innerHTML = r.toNumber();});">잔액조회2</button></li>
 	<li>사용자계좌: <span id="ownerbal2"></span></li>
+	<li>사용자계좌2: <button onclick="simpleStorage3.balanceOf(owner3,function(e,r){document.getElementById('ownerbal3').innerHTML = r.toNumber();});">잔액조회2</button></li>
+	<li>사용자계좌2: <span id="ownerbal3"></span></li>
 	<li>RWRW: <button onclick="simpleStorage3.transfer(owner2,100,function(e,r){});">100코인 </button></li>
 	
 <!--  <li>토큰 소유량: <span id="_balances[owner]"></span></li>
@@ -88,6 +90,7 @@ HTML 소스<br>
 <script>
 	var owner = '0xff468dc9Ac7ff385dF357CbcF4B5826d87c5dec8';
 	var owner2 = '0x1C5dE160FbB329250A5a5a3565969eeE7d0CfA1e';
+	var owner3 = '0xff468dc9Ac7ff385dF357CbcF4B5826d87c5dec8';
 var contractAddress = '0xde856446a16a7c24a9819767be3d05583aa3063d';
 var abi = [{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"}];
 var simpleStorageContract;
