@@ -53,7 +53,7 @@
 	<li>토큰 소유량: <span id="_balances(0xff468dc9Ac7ff385dF357CbcF4B5826d87c5dec8)"></span></li> -->
 	
   <li>입력한 주소값 : <span id="myaddr"></span>
-  <button onclick="getaddrValue()">새로고침</button> (현재블록: <span id="lastBlock"></span>)</li>
+  <button onclick="getaddrValue()">새로고침</button> (현재블록: <span id="lastBlockaddr"></span>)</li>
   <li><input id="newmyaddr" type="text"><button onclick="setaddrValue()">새 값으로 저장하기</button>
       <div id="resultaddr"></div></li>
 	
@@ -571,7 +571,7 @@ function totalSupplyValue() {
     document.getElementById('myaddr').innerHTML=r;
   });
   web3.eth.getBlockNumber(function(e,r){
-    document.getElementById('lastBlock').innerHTML = r; r++;
+    document.getElementById('lastBlockaddr').innerHTML = r; r++;
   });
 	}
 	
