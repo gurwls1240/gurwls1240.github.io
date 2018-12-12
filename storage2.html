@@ -35,13 +35,15 @@
   <li>토큰 데시멀: <span id="_decimals"></span></li>
   <li>토큰 발행량: <span id="_totalSupply"></span></li>
 	
+	<!-- 계좌를 받아서(컨트랙트로 받을지 결정하고) 그거를 owner에 넣어서 사용하고, 업로드 페이지또는 폼하나 만들기(이것도 컨트랙트로) -->
+	
   <li>마스터계좌: <button onclick="simpleStorage3.balanceOf(owner,function(e,r){document.getElementById('ownerbal').innerHTML = r.toNumber();});">잔액조회</button></li>
 	<li>마스터계좌: <span id="ownerbal"></span></li>
 	 <li>사용자계좌: <button onclick="simpleStorage3.balanceOf(owner2,function(e,r){document.getElementById('ownerbal2').innerHTML = r.toNumber();});">잔액조회2</button></li>
 	<li>사용자계좌: <span id="ownerbal2"></span></li>
 	<li>사용자계좌2: <button onclick="simpleStorage3.balanceOf(owner3,function(e,r){document.getElementById('ownerbal3').innerHTML = r.toNumber();});">잔액조회2</button></li>
 	<li>사용자계좌2: <span id="ownerbal3"></span></li>
-	<li>RWRW: <button onclick="simpleStorage3.transfer(owner2,100,function(e,r){});">100코인 </button></li>
+	<li>RWRW: <button onclick="simpleStorage3.transfer(owner2,100,function(e,r){});">100코인 보내기</button></li>
 	
 <!--  <li>토큰 소유량: <span id="_balances[owner]"></span></li>
 	<li>토큰 소유량: <span id="_balances['0xff468dc9Ac7ff385dF357CbcF4B5826d87c5dec8']"></span></li>
