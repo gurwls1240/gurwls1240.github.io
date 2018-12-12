@@ -34,8 +34,8 @@
   <li>토큰 심볼: <span id="_symbol"></span></li>
   <li>토큰 데시멀: <span id="_decimals"></span></li>
   <li>토큰 발행량: <span id="_totalSupply"></span></li>
-  <li><form action="storage2.html"><p>계좌입력</p><input type="text" name="owner"><input type="submit"></form></li>
-  <li>계좌 입력: <span id="_owner"></span></li>
+  <li>RWRW: <button onclick="balanceOfValue()">새로고침</button></li>
+  <li>계좌 입력: <span id="_balances[storedData]"></span></li>
   <li>토큰 소유량: <span id="_balances[owner]"></span></li>
 	
   <li>컨트랙트에 저장된 값: <span id="storedData"></span>
@@ -500,6 +500,15 @@ function totalSupplyValue() {
     document.getElementById('lastBlock').innerHTML = r; r++;
   });
 }  
+
+function balanceOfValue() {
+  simpleStorage3.balanceOf(storedData, function(e,r){
+    document.getElementById('_balances[storedData]').innerHTML=r.toNumber();
+  });
+  web3.eth.getBlockNumber(function(e,r){
+    document.getElementById('lastBlock').innerHTML = r; r++;
+  });
+} 
 	
 function getValue() {
   simpleStorage.get(function(e,r){
