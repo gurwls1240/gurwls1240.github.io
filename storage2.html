@@ -39,12 +39,12 @@
 	<li>마스터계좌: <span id="ownerbal"></span></li>
 	 <li>사용자계좌: <button onclick="simpleStorage3.balanceOf(owner2,function(e,r){document.getElementById('ownerbal2').innerHTML = r.toNumber();});">잔액조회2</button></li>
 	<li>사용자계좌: <span id="ownerbal2"></span></li>
-	<li>RWRW: <button onclick="simpleStorage3.transfer(owner2,100,function(e,r){});">100</button></li>
+	<li>RWRW: <button onclick="simpleStorage3.transfer(owner2,100,function(e,r){});">100코인 </button></li>
 	
-  <li>토큰 소유량: <span id="_balances[owner]"></span></li>
+<!--  <li>토큰 소유량: <span id="_balances[owner]"></span></li>
 	<li>토큰 소유량: <span id="_balances['0xff468dc9Ac7ff385dF357CbcF4B5826d87c5dec8']"></span></li>
 	<li>토큰 소유량: <span id="_balances["0xff468dc9Ac7ff385dF357CbcF4B5826d87c5dec8"]"></span></li>
-	<li>토큰 소유량: <span id="_balances(0xff468dc9Ac7ff385dF357CbcF4B5826d87c5dec8)"></span></li>
+	<li>토큰 소유량: <span id="_balances(0xff468dc9Ac7ff385dF357CbcF4B5826d87c5dec8)"></span></li> -->
 	
   <li>컨트랙트에 저장된 값: <span id="storedData"></span>
   <button onclick="getValue()">새로고침</button> (현재블록: <span id="lastBlock"></span>)</li>
