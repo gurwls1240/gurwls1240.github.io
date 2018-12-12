@@ -21,6 +21,8 @@
     #newproject {width: 200px; margin-right:10px; text-align:right;}
     #newclass {width: 200px; margin-right:10px; text-align:right;}
     #newtitle {width: 200px; margin-right:10px; text-align:right;}
+	  #myaddr {width: 200px; margin-right:10px; text-align:right;}
+    #newmyaddr {width: 200px; margin-right:10px; text-align:right;}
   </style>
 </head>
 <body>
@@ -41,8 +43,8 @@
 	<li>마스터계좌: <span id="ownerbal"></span></li>
 	 <li>사용자계좌: <button onclick="simpleStorage3.balanceOf(owner2,function(e,r){document.getElementById('ownerbal2').innerHTML = r.toNumber();});">잔액조회2</button></li>
 	<li>사용자계좌: <span id="ownerbal2"></span></li>
-	<li>사용자계좌2: <button onclick="simpleStorage3.balanceOf(owner3,function(e,r){document.getElementById('ownerbal3').innerHTML = r.toNumber();});">잔액조회2</button></li>
-	<li>사용자계좌2: <span id="ownerbal3"></span></li>
+	<li>사용자계좌myaddr: <button onclick="simpleStorage3.balanceOf(myaddr,function(e,r){document.getElementById('ownerbal3').innerHTML = r.toNumber();});">잔액조회2</button></li>
+	<li>사용자계좌myaddr: <span id="ownerbal3"></span></li>
 	<li>RWRW: <button onclick="simpleStorage3.transfer(owner2,100,function(e,r){});">100코인 보내기</button></li>
 	
 <!--  <li>토큰 소유량: <span id="_balances[owner]"></span></li>
