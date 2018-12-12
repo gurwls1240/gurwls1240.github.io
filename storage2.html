@@ -538,7 +538,7 @@ function nameValue() {
     document.getElementById('_name').innerHTML=r;
   });
   web3.eth.getBlockNumber(function(e,r){
-    document.getElementById('lastBlock').innerHTML = r; r++;
+    document.getElementById('lastBlockname').innerHTML = r; r++;
   });
 }  
  function symbolValue() {
@@ -546,7 +546,7 @@ function nameValue() {
     document.getElementById('_symbol').innerHTML=r;
   });
   web3.eth.getBlockNumber(function(e,r){
-    document.getElementById('lastBlock').innerHTML = r; r++;
+    document.getElementById('lastBlocksymbol').innerHTML = r; r++;
   });
 } 
 function decimalsValue() {
@@ -554,7 +554,7 @@ function decimalsValue() {
     document.getElementById('_decimals').innerHTML=r.toNumber();
   });
   web3.eth.getBlockNumber(function(e,r){
-    document.getElementById('lastBlock').innerHTML = r; r++;
+    document.getElementById('lastBlockdecimals').innerHTML = r; r++;
   });
 }  
 function totalSupplyValue() {
@@ -562,7 +562,7 @@ function totalSupplyValue() {
     document.getElementById('_totalSupply').innerHTML=r.toNumber();
   });
   web3.eth.getBlockNumber(function(e,r){
-    document.getElementById('lastBlock').innerHTML = r; r++;
+    document.getElementById('lastBlockSupply').innerHTML = r; r++;
   });
 }  
 
