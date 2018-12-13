@@ -428,87 +428,17 @@
 					</div>
 				</div>
 			</div>
-			<div class="row events_row">
-
-				<!-- Event -->
-				<div class="col-lg-4 event_col">
-					<div class="event event_left">
-						<div class="event_image"><img src="images/event_1.jpg" alt=""></div>
-						<div class="event_body d-flex flex-row align-items-start justify-content-start">
-							<div class="event_date">
-								<div class="d-flex flex-column align-items-center justify-content-center trans_200">
-									<div class="event_day trans_200">20</div>  <!--스터디 모집 마감일 -->
-									<div class="event_month trans_200">Dec</div>   <!--스터디 모집 마감일 -->
-								</div>
-							</div>
-							<div class="event_content">
-								<div class="event_title"><a href="#">블록체인 Dapp 설계를 해보고 싶으신 분들</a></div>  <!-- 스터디 이름 --> <!-- 스터디 페이지 개설 -->
-								<div class="event_info_container">
-									<div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>매주 15.00 - 19.30</span></div>  <!-- 스터디 시간 -->
-									<div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>25 Sejong Univ.</span></div>  <!-- 스터디 위치 -->
-									<div class="event_text">
-										<p>Dapp을 설계해봄으로써 4차 산업혁명의 핵심기술인 블록체인을 연구한다.</p>  <!-- 스터디 내용 -->
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+			
+			<!-- Event -->
+			
+			<div class="row events_row" id="showStudies"> 
+                        </div>
+			<div class="row">
+				<div class="col">
+					<div class="courses_button trans_200"><a href="uploadstudy.html">Study Upload</a></div>
 				</div>
-
-				<!-- Event -->
-				<div class="col-lg-4 event_col">
-					<div class="event event_mid">
-						<div class="event_image"><img src="images/event_2.jpg" alt=""></div>
-						<div class="event_body d-flex flex-row align-items-start justify-content-start">
-							<div class="event_date">
-								<div class="d-flex flex-column align-items-center justify-content-center trans_200">
-									<div class="event_day trans_200">18</div>  <!--스터디 모집 마감일 -->
-									<div class="event_month trans_200">Dec</div>  <!--스터디 모집 마감일 -->
-								</div>
-							</div>
-							<div class="event_content">
-								<div class="event_title"><a href="#">Repaying your student loans (Winter 2017-2018)</a></div>   <!-- 스터디 이름 -->
-								<div class="event_info_container">
-									<div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>09.00 - 17.30</span></div>  <!-- 스터디 시간 -->
-									<div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>25 Brooklyn City</span></div>  <!-- 스터디 위치 -->
-									<div class="event_text">
-										<p>This Consumer Action News issue covers topics now being debated before...</p>  <!-- 스터디 내용 -->
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Event -->
-				<div class="col-lg-4 event_col">
-					<div class="event event_right">
-						<div class="event_image"><img src="images/event_3.jpg" alt=""></div>
-						<div class="event_body d-flex flex-row align-items-start justify-content-start">
-							<div class="event_date">
-								<div class="d-flex flex-column align-items-center justify-content-center trans_200">
-									<div class="event_day trans_200">12</div>  <!-- 스터디 모집 마감일 -->
-									<div class="event_month trans_200">Dec</div>  <!-- 스터디 모집 마감일 -->
-								</div>
-							</div>
-							<div class="event_content">
-								<div class="event_title"><a href="#">Alternative data and financial inclusion</a></div>   <!-- 스터디 이름 -->
-								<div class="event_info_container">
-									<div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>13.00 - 18.30</span></div>  <!-- 스터디 시간 -->
-									<div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>25 New York City</span></div>  <!-- 스터디 위치 -->
-									<div class="event_text">
-										<p>Policy analysts generally agree on a need for reform, but not on which path...</p>  <!-- 스터디  -->
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
 			</div>
 		</div>
-					
-					<div class="courses_button trans_200"><a href="uploadstudy.html">Study Upload</a></div>
 	</div>
 
 	<!-- Team -->
@@ -863,7 +793,9 @@ var contractAddress = '0xdb0ba1df95091b36d2654e2f316f5b5e5f5aeabe';
 	// Now you can start your app & access web3 freely:
 	startApp();
 	});
-
+	
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
 	function startApp() {
 		EDBContract = web3.eth.contract(abi);
 		EDB = EDBContract.at(contractAddress);
