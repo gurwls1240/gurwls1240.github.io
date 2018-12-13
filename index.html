@@ -332,34 +332,18 @@
 					</div>
 				</div>
 			</div>
-			<div class="row courses_row">
+			
+			<!-- Course -->
+			<div class="row courses_row" id="showCourses">
 				
-				<!-- Course -->
-				<div class="col-lg-4 course_col">
-					<div class="course">
-						<div class="course_image"><img src="images/course_1.jpg" alt=""></div>
-						<div class="course_body">
-							<h3 class="course_title"><a href="course.html">Dapp 설계</a></h3> <!--강의 제목 받아서 리턴 -->
-							<div class="course_teacher">서혁진( 닉네임 받아서 리턴 )</div> <!--닉네임 받아서 리턴 -->
-							<div class="course_text">
-								<p>매우 어렵지만 재미있는 강의입니다. 강사가 등록한 강의소개 한줄 리턴</p>
-							</div>
-						</div>
-						<div class="course_footer">
-							<div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
-								<div class="course_info">
-									<i class="fa fa-graduation-cap" aria-hidden="true"></i>
-									<span>20 Student</span> <!-- 수강신청할때 ++하여 학생수 저장한 값 리턴 -->
-								</div>
-								<div class="course_info">
-									<i class="fa fa-star" aria-hidden="true"></i>
-									<span>5 Ratings</span> <!-- 리뷰에 표시되는 평점들 평균내서 리턴 -->
-								</div>
-								<div class="course_price ml-auto">$130</div> <!-- 강사가 정하는 값, 영상 올릴때 저장한 값 리턴 -->
-							</div>
-						</div>
 					</div>
+			<div class="row">
+				<div class="col">
+					<div class="courses_button trans_200"><a href="#">view all courses</a></div>
 				</div>
+			</div>
+		</div>
+	</div>
 
 				<!-- Course -->
 				<div class="col-lg-4 course_col">
@@ -939,63 +923,72 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 	
 <script>
-var contractAddress = '0xde856446a16a7c24a9819767be3d05583aa3063d';
-var abi = [{"constant":false,"inputs":[{"name":"x","type":"uint256"}],"name":"set","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"get","outputs":[{"name":"","type":"uint256"}],"payable":false,"type":"function"}];
-var simpleStorageContract;
-var simpleStorage;
-window.addEventListener('load', function() {
-  // Checking if Web3 has been injected by the browser (Mist/MetaMask)
-  if (typeof web3 !== 'undefined') {
-    // Use Mist/MetaMask's provider
-    window.web3 = new Web3(web3.currentProvider);
-  } else {
-    console.log('No web3? You should consider trying MetaMask!')
-    // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
-    window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-  }
-  // Now you can start your app & access web3 freely:
-  startApp();
-});
-function startApp() {
-  simpleStorageContract = web3.eth.contract(abi);
-  simpleStorage = simpleStorageContract.at(contractAddress);
-  document.getElementById('contractAddr').innerHTML = getLink(contractAddress);
-  web3.eth.getAccounts(function(e,r){
-    document.getElementById('accountAddr').innerHTML = getLink(r[0]);
-  });
-  getValue();
-}
-function getLink(addr) {
-  return '<a target="_blank" href=https://testnet.etherscan.io/address/' + addr + '>' + addr +'</a>';
-}
-function getValue() {
-  simpleStorage.get(function(e,r){
-    document.getElementById('storedData').innerHTML=r.toNumber();
-  });
-  web3.eth.getBlockNumber(function(e,r){
-    document.getElementById('lastBlock').innerHTML = r;
-  });
-}
-function setValue() {
-  var newValue = document.getElementById('newValue').value;
-  var txid
-  simpleStorage.set(newValue, function(e,r){
-    document.getElementById('result').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
-    txid = r;
-  });
-  var filter = web3.eth.filter('latest');
-  filter.watch(function(e, r) {
-    getValue();
-    web3.eth.getTransaction(txid, function(e,r){
-      if (r != null && r.blockNumber > 0) {
-        document.getElementById('pending').innerHTML = '(기록된 블록: ' + r.blockNumber + ')';
-        document.getElementById('pending').style.cssText ='color:green;';
-        document.getElementById('storedData').style.cssText ='color:green; font-size:300%;';
-        filter.stopWatching();
-      }
-   });
- });
-}
+var contractAddress = '0xdb0ba1df95091b36d2654e2f316f5b5e5f5aeabe';
+	var abi = [ { "constant": false, "inputs": [ { "name": "_spender", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "approve", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_name", "type": "string" } ], "name": "createPerson", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_key", "type": "bytes32" } ], "name": "payForCourse", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "transfer", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_from", "type": "address" }, { "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "transferFrom", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_video", "type": "string" }, { "name": "_title", "type": "string" }, { "name": "_summary", "type": "string" }, { "name": "_price", "type": "uint16" } ], "name": "uploadVideo", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "name": "CEOaddress", "type": "address" } ], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [ { "indexed": true, "name": "_from", "type": "address" }, { "indexed": true, "name": "_to", "type": "address" }, { "indexed": false, "name": "_value", "type": "uint256" } ], "name": "Transfer", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": true, "name": "_owner", "type": "address" }, { "indexed": true, "name": "_spender", "type": "address" }, { "indexed": false, "name": "_value", "type": "uint256" } ], "name": "Approval", "type": "event" }, { "constant": true, "inputs": [ { "name": "_owner", "type": "address" }, { "name": "_spender", "type": "address" } ], "name": "allowance", "outputs": [ { "name": "remaining", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "address" }, { "name": "", "type": "address" } ], "name": "allowed", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_owner", "type": "address" } ], "name": "balanceOf", "outputs": [ { "name": "balance", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "address" } ], "name": "balances", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "ceoAddress", "outputs": [ { "name": "", "type": "address" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_key", "type": "bytes32" } ], "name": "checkMyCourse", "outputs": [ { "name": "", "type": "bool" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "decimals", "outputs": [ { "name": "", "type": "uint8" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getMyClass", "outputs": [], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getMyLecture", "outputs": [], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_key", "type": "bytes32" }, { "name": "_index", "type": "uint256" } ], "name": "getReview", "outputs": [ { "name": "", "type": "uint256" }, { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_key", "type": "bytes32" } ], "name": "getReviewNum", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_key", "type": "bytes32" } ], "name": "getVideo", "outputs": [ { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_index", "type": "uint256" } ], "name": "getVideoList", "outputs": [ { "name": "", "type": "bytes32" }, { "name": "", "type": "string" }, { "name": "", "type": "string" }, { "name": "", "type": "string" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getVideoNum", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "name", "outputs": [ { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "symbol", "outputs": [ { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "totalSupply", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "whois", "outputs": [ { "name": "", "type": "address" } ], "payable": false, "stateMutability": "view", "type": "function" } ];
+	var EDBContract;
+	var EDB;
+
+	window.addEventListener('load', function() {
+
+	// Checking if Web3 has been injected by the browser (Mist/MetaMask)
+		if (typeof web3 !== 'undefined') {
+			// Use Mist/MetaMask's provider
+			window.web3 = new Web3(web3.currentProvider);
+		} else {
+			console.log('No web3? You should consider trying MetaMask!')
+			// fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+			window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+		}
+	// Now you can start your app & access web3 freely:
+	startApp();
+	});
+
+	function startApp() {
+		EDBContract = web3.eth.contract(abi);
+		EDB = EDBContract.at(contractAddress);
+		getValue();
+	}
+
+	function getLink(addr) {
+		return '<a target="_blank" href=https://testnet.etherscan.io/address/' + addr + '>' + addr +'</a>';
+	}
+
+	function getValue() {
+		$("#showCourses").empty();
+
+		var count = 3;
+		EDB.getVideoNum(function(e,r){
+			if(r<count) count = r;
+		});
+
+		for(a = 0; a < count; a++){
+			EDB.getVideoList(a, function(e,r){
+				$("#showCourses").append($('<div class="col-lg-4 course_col"> <div class="course"> <div class="course_image"><img src="images/course_1.jpg" alt=""></div> <div class="course_body"> <h3 class="course_title"><a href="course.html">'+ r[2] +'</a></h3> <div class="course_teacher">'+ r[1] +'</div> <div class="course_text"> <p>'+ r[3] +'</p> </div> </div> <div class="course_footer"> <div class="course_footer_content d-flex flex-row align-items-center justify-content-start"> <div class="course_info"> <i class="fa fa-graduation-cap" aria-hidden="true"></i> <span>'+ 0 +'/span> </div> <div class="course_info"> <i class="fa fa-star" aria-hidden="true"></i> <span>'+ 0 +' Ratings</span> </div> <div class="course_price ml-auto">'+ r[4] +'</div> </div> </div> </div> </div>'))
+			});
+		}
+	}
+
+	function setName(){
+		var newName = document.getElementById('myName').value;
+		var txid;
+
+		EDB.createPerson(newName, function(e,r){
+			//트랜잭션 보내면 그거 보여주는걸 해야하나..... 그냥 안보여줘도 되나?
+			//document.getElementById('resultName').innerHTML = 'Transaction id: ' + r + '<span id="pendingName" style="color:red;">(Pending)</span>';
+			txid = r;
+		});
+
+		var filter = web3.eth.filter('latest');
+		filter.watch(function(e, r) {
+			web3.eth.getTransaction(txid, function(e,r){
+				if (r != null && r.blockNumber > 0) {
+					document.getElementById('myName').value = "";
+					filter.stopWatching();
+				}
+			});
+		});
+		
+	}
 </script>
 	
 </html>
