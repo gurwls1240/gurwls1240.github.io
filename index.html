@@ -905,6 +905,7 @@ var contractAddress2 = '0x669a0ddb1214d99f8899c86bc9ecbb910941e669'; //스터디
 		}
 	// Now you can start your app & access web3 freely:
 	startApp();
+		startApp2();
 	});
 	
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -973,8 +974,7 @@ var contractAddress2 = '0x669a0ddb1214d99f8899c86bc9ecbb910941e669'; //스터디
 
 		for(a = 0; a < count; a++){
 			study.getstudy(a, function(e,r){
-				$("#showStudies").append($('
-<div class="col-lg-4 event_col">
+				$("#showStudies").append($('<div class="col-lg-4 event_col">
 					<div class="event event_left">
 						<div class="event_image"><img src="images/event_1.jpg" alt=""></div>
 						<div class="event_body d-flex flex-row align-items-start justify-content-start">
