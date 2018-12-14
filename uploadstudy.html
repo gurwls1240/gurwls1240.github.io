@@ -664,7 +664,7 @@ function setstudyValue() {
   var newmap = document.getElementById('mymap').value;
   var txid
   
-  EDB.uploadStudy(filename, newday, newmonth, newtitle, newclock, newmap,function(e,r){
+  EDB.uploadStudy(0, newday, newmonth, newtitle, newclock, newmap,function(e,r){
    // document.getElementById('result').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
     txid = r;
   });
