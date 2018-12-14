@@ -646,19 +646,13 @@ window.addEventListener('load', function() {
 function startApp() {
 		EDBContract = web3.eth.contract(abi);
 		EDB = EDBContract.at(contractAddress);
-	        getValue();
+	     //   getValue();
 }
 
 	function getLink(addr) {
 		return '<a target="_blank" href=https://testnet.etherscan.io/address/' + addr + '>' + addr +'</a>';
 	}
 	
-	function getValue() {
-		web3.eth.getBlockNumber(function(e,r){
-                document.getElementById('lastBlockvideo').innerHTML = r; r++;
-                                                     });
-		
-	}
 
 function setstudyValue() {
   var newday = Number(document.getElementById('myday').value);
@@ -676,7 +670,7 @@ function setstudyValue() {
   
   var filter = web3.eth.filter('latest');
   filter.watch(function(e, r) {
-    getValue();
+//    getValue();
     web3.eth.getTransaction(txid, function(e,r){
       if (r != null && r.blockNumber > 0) {
 //        document.getElementById('pending').innerHTML = '(기록된 블록: ' + r.blockNumber + ')';
