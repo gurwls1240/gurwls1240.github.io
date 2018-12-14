@@ -1405,7 +1405,8 @@ var contractAddress = '0x672b1152067685a3bd7187acbc5fb37a5c4a9446'; //
 
 		for(a = 0; a < count; a++){
 			EDB.getVideoList(a, function(e,r){
-				$("#showCourses").append($('<div class="col-lg-4 course_col"> <div class="course"> <div class="course_image"><img src="images/course_1.jpg" alt=""></div> <div class="course_body"> <h3 class="course_title"><a href="course.html">'+ r[2] +'</a></h3> <div class="course_teacher">'+ r[1] +'</div> <div class="course_text"> <p>'+ r[3] +'</p> </div> </div> <div class="course_footer"> <div class="course_footer_content d-flex flex-row align-items-center justify-content-start"> <div class="course_info"> <i class="fa fa-graduation-cap" aria-hidden="true"></i> <span>'+ 0 +'/span> </div> <div class="course_info"> <i class="fa fa-star" aria-hidden="true"></i> <span>'+ 0 +' Ratings</span> </div> <div class="course_price ml-auto">'+ r[4] +'</div> </div> </div> </div> </div>'))
+				$("#showCourses").append($('<div class="col-lg-4 course_col"> 
+							   <div class="course"> <div class="course_image"><img src="images/course_1.jpg" alt=""></div> <div class="course_body"> <h3 class="course_title"><a href="course.html">'+ r[2] +'</a></h3> <div class="course_teacher">'+ r[1] +'</div> <div class="course_text"> <p>'+ r[3] +'</p> </div> </div> <div class="course_footer"> <div class="course_footer_content d-flex flex-row align-items-center justify-content-start"> <div class="course_info"> <i class="fa fa-graduation-cap" aria-hidden="true"></i> <span>'+ 0 +'/span> </div> <div class="course_info"> <i class="fa fa-star" aria-hidden="true"></i> <span>'+ 0 +' Ratings</span> </div> <div class="course_price ml-auto">'+ r[4] +'</div> </div> </div> </div> </div>'))
 			});
 		}
 		web3.eth.getBlockNumber(function(e,r){
