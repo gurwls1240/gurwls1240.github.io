@@ -966,11 +966,11 @@ var contractAddress2 = '0x669a0ddb1214d99f8899c86bc9ecbb910941e669'; //스터디
 	function getstudyValue() {
 		$("#showStudies").empty();
 
-		var count2 = 5;
-		study.getstudynum(function(e,r){
-			if(r<count2) 
-				count2 = r;
-		});
+		var count2 = 3;
+	//	study.getstudynum(function(e,r){
+	//		if(r<count2) 
+	//			count2 = r;
+	//	});
 
 		for(a = 0; a < count; a++){
 			study.getstudy(a, function(e,r){
@@ -997,9 +997,10 @@ var contractAddress2 = '0x669a0ddb1214d99f8899c86bc9ecbb910941e669'; //스터디
 						</div>
 					</div>
 				</div>'))
-	});
-		}
-	}
+	                                            }
+				        );
+		                           }
+			         }
 </script>
 	
 </html>
