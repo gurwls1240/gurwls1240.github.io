@@ -765,7 +765,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 	
 <script>
-var contractAddress = '0x3fb7518ea76a1a6dd8a2fc30bc02140739574126'; //
+var contractAddress = '0x672b1152067685a3bd7187acbc5fb37a5c4a9446'; //
 	var abi = [
 	{
 		"constant": false,
@@ -1219,6 +1219,20 @@ var contractAddress = '0x3fb7518ea76a1a6dd8a2fc30bc02140739574126'; //
 	},
 	{
 		"constant": true,
+		"inputs": [],
+		"name": "getStudyNum",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
 		"inputs": [
 			{
 				"name": "_key",
@@ -1351,7 +1365,7 @@ var contractAddress = '0x3fb7518ea76a1a6dd8a2fc30bc02140739574126'; //
 	}
 ];
   var EDBcontract;
-	var EDB;
+  var EDB;
 	
 	window.addEventListener('load', function() {
 
@@ -1403,7 +1417,7 @@ var contractAddress = '0x3fb7518ea76a1a6dd8a2fc30bc02140739574126'; //
 		$("#showStudies").empty();
 
 		var count = 3;
-		EDB.getVideoNum(function(e,r){
+		EDB.getStudyNum(function(e,r){
 			if(r<count) count = r;
 		});
 
@@ -1415,18 +1429,15 @@ var contractAddress = '0x3fb7518ea76a1a6dd8a2fc30bc02140739574126'; //
 						<div class="event_body d-flex flex-row align-items-start justify-content-start">
 							<div class="event_date">
 								<div class="d-flex flex-column align-items-center justify-content-center trans_200">
-									<div class="event_day trans_200">'+r[1]+'</div>  <!--스터디 모집 마감일 -->
-									<div class="event_month trans_200">'+r[2]+'</div>   <!--스터디 모집 마감일 -->
+									<div class="event_day trans_200">'+r[1]+'</div>  
+									<div class="event_month trans_200">'+r[2]+'</div>   
 								</div>
 							</div>
 							<div class="event_content">
-								<div class="event_title"><a href="#">'+r[3]+'</a></div>  <!-- 스터디 이름 --> <!-- 스터디 페이지 개설 -->
+								<div class="event_title"><a href="#">'+r[3]+'</a></div> 
 								<div class="event_info_container">
-									<div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>'+r[4]+'</span></div>  <!-- 스터디 시간 -->
-									<div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>'+r[5]+'</span></div>  <!-- 스터디 위치 -->
-							<!--		<div class="event_text">
-										<p>'+r[5]+'</p> 
-									</div>  -->
+									<div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>'+r[4]+'</span></div> 
+									<div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>'+r[5]+'</span></div>  
 								</div>
 							</div>
 						</div>
