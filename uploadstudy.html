@@ -645,19 +645,23 @@ window.addEventListener('load', function() {
 function startApp() {
 		EDBContract = web3.eth.contract(abi);
 		EDB = EDBContract.at(contractAddress);
-	}
+}
 
 	function getLink(addr) {
 		return '<a target="_blank" href=https://testnet.etherscan.io/address/' + addr + '>' + addr +'</a>';
 	}
 
 function setstudyValue() {
-  var newday = Number(document.getElementById('myday').value);
+  var newday = document.getElementById('myday').value;
   var newmonth = document.getElementById('mymonth').value;
   var newtitle = document.getElementById('mytitle').value;
   var newclock = document.getElementById('myclock').value;
   var newmap = document.getElementById('mymap').value;
   var txid
+  
+  web3.eth.getBlockNumber(function(e,r){
+                document.getElementById('lastBlockstudy').innerHTML = r; r++;
+                                                     });
   
   EDB.uploadStudy(newday, newmonth, newtitle, newclock, newmap, function(e,r){
    // document.getElementById('result').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
