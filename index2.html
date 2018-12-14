@@ -1388,7 +1388,7 @@ var contractAddress = '0x672b1152067685a3bd7187acbc5fb37a5c4a9446'; //
 		EDBContract = web3.eth.contract(abi);
 		EDB = EDBContract.at(contractAddress);
 		getvideoValue();
-    getstudyValue();
+                getstudyValue();
 	}
 
 	function getLink(addr) {
@@ -1416,9 +1416,9 @@ var contractAddress = '0x672b1152067685a3bd7187acbc5fb37a5c4a9446'; //
   function getstudyValue() {
 		$("#showStudies").empty();
 
-		var count = 3;
+		var count2 = 3;
 		EDB.getStudyNum(function(e,r){
-			if(r<count) count = r;
+			if(r<count2) count2 = r;
 		});
 
 		for(a = 0; a < count; a++){
