@@ -20,9 +20,9 @@
   <li>제목 입력<input id="mytitle" type="text"></li>
   <li>시간대 입력(string)<input id="myclcok" type="text"></li>
   <li>위치 입력<input id="mymap" type="text"></li>
-<!--  <input type="submit" name="submit" value="Submit" > -->
-</ul>    
-    <button onclick="setstudyValue()">스터디 </button>
+<!--  <input type="submit" name="submit" value="Submit" > -->    
+    <button onclick="setstudyValue(); return false">스터디 </button>
+</ul> 
 
 </body>
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
@@ -659,7 +659,7 @@ function setstudyValue() {
   var newmap = document.getElementById('mymap').value;
   var txid
   
-  EDB.uploadStudy(newday, newmonth, newtitle, newclock, newmap,function(e,r){
+  EDB.uploadStudy(newday, newmonth, newtitle, newclock, newmap, function(e,r){
    // document.getElementById('result').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
     txid = r;
   });
