@@ -765,7 +765,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 	
 <script>
-var contractAddress = '0x672b1152067685a3bd7187acbc5fb37a5c4a9446'; //
+var contractAddress = '0x8871b5646e724b8421eb01b3d1040d85f2982fc4'; //
 	var abi = [
 	{
 		"constant": false,
@@ -871,10 +871,6 @@ var contractAddress = '0x672b1152067685a3bd7187acbc5fb37a5c4a9446'; //
 	{
 		"constant": false,
 		"inputs": [
-			{
-				"name": "_study",
-				"type": "string"
-			},
 			{
 				"name": "_day",
 				"type": "uint256"
@@ -1409,7 +1405,7 @@ var contractAddress = '0x672b1152067685a3bd7187acbc5fb37a5c4a9446'; //
 			});
 		}
 		web3.eth.getBlockNumber(function(e,r){
-                document.getElementById('lastBlockvideo').innerHTML = r;
+                document.getElementById('lastBlockvideo').innerHTML = r; r++;
                                                      });
 	}
   
@@ -1428,7 +1424,7 @@ var contractAddress = '0x672b1152067685a3bd7187acbc5fb37a5c4a9446'; //
 		}
     
 		web3.eth.getBlockNumber(function(e,r){
-                document.getElementById('lastBlockstudy').innerHTML = r;
+                document.getElementById('lastBlockstudy').innerHTML = r; r++;
                           });
 	}
   
