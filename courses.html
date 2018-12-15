@@ -1083,7 +1083,7 @@ var abi = [
 
 		for(a = count; a > -1; a--){
 			EDB.getVideoList(a, function(e,r){
-				$("#showCourses").append($('<div class="latest d-flex flex-row align-items-start justify-content-start"><div class="latest_image"><div><img src="images/latest_3.jpg" alt=""></div></div><div class="latest_content"><div class="latest_title"><a href="course.html">'+r[2]+'</a></div><div class="latest_price">'+r[4]+'</div></div></div>'))
+				$("#showlatestCourses").append($('<div class="latest d-flex flex-row align-items-start justify-content-start"><div class="latest_image"><div><img src="images/latest_3.jpg" alt=""></div></div><div class="latest_content"><div class="latest_title"><a href="course.html">'+r[2]+'</a></div><div class="latest_price">'+r[4]+'</div></div></div>'))
 			});
 		}
 		web3.eth.getBlockNumber(function(e,r){
