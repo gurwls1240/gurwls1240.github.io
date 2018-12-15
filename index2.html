@@ -403,13 +403,14 @@
 
 							<!-- Milestone -->
 							<div class="milestone">
-								<div class="milestone_counter" <span id="r"></span></div>
+								<div class="milestone_counter" <span id="ret"></span></div>
 								<div class="milestone_text">블록 갯수</div>
 							</div>
 
 							<!-- Milestone -->
 							<div class="milestone">
-								<div class="milestone_counter" data-end-value="32520">0</div>
+							<!--	<div class="milestone_counter" data-end-value="32520">0</div>-->
+								<div>내 어카운트 주소: <span id="ret"></span></div>
 								<div class="milestone_text">교육 동영상 갯수</div>
 							</div>
 
@@ -1416,7 +1417,7 @@ var abi = [
 	        var leng2=3;
 	  
 		EDB.getStudyNum(function(e,r){
-		        document.getElementById('r').innerHTML = r.toNumber(); 	
+		        document.getElementById('ret').innerHTML = r.toNumber(); 	
 		});
 		 		
 
