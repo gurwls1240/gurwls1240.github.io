@@ -21,7 +21,7 @@
   <li>시간대 입력(string)<input id="myclcok" type="text"></li>
   <li>위치 입력<input id="mymap" type="text"></li>
 <!--  <input type="submit" name="submit" value="Submit" > -->    
-    <button onclick="setstudyValue();">스터디 </button>
+    <button onclick="setstudyValue()">스터디 </button>
 </ul> 
 
 </body>
@@ -29,7 +29,7 @@
 <!-- script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script -->
 <script>
 var contractAddress = '0x48dfd2264a15c055019e74f2a1495eaaa822a06d'; //
-	var abi = [
+var abi = [
 	{
 		"constant": true,
 		"inputs": [],
@@ -655,18 +655,18 @@ function startApp() {
 	
 
 function setstudyValue() {
-  var newday = Number(document.getElementById('myday').value);
-  var newmonth = document.getElementById('mymonth').value;
-  var newtitle = document.getElementById('mytitle').value;
-  var newclock = document.getElementById('myclock').value;
-  var newmap = document.getElementById('mymap').value;
-  var txid
+  var newday; //= document.getElementById('myday').value;
+  var newmonth; //= document.getElementById('mymonth').value;
+  var newtitle; //= document.getElementById('mytitle').value;
+  var newclock; //= document.getElementById('myclock').value;
+  var newmap; //= document.getElementById('mymap').value;
+  var txid;
   
   
   EDB.uploadStudy(newday, newmonth, newtitle, newclock, newmap, function(e,r){
    // document.getElementById('result').innerHTML = 'Transaction id: ' + r + '<span id="pending" style="color:red;">(Pending)</span>';
-    txid = r;
-  });
+    txid = r; }
+		 );
   
   var filter = web3.eth.filter('latest');
   filter.watch(function(e, r) {
