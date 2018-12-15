@@ -403,7 +403,7 @@
 
 							<!-- Milestone -->
 							<div class="milestone">
-								<div class="milestone_counter" <span id="lastBlockstudy"></span></div>
+								<div class="milestone_counter" <span id="r"></span></div>
 								<div class="milestone_text">블록 갯수</div>
 							</div>
 
@@ -1416,7 +1416,7 @@ var abi = [
 	        var leng2=3;
 	  
 		EDB.getStudyNum(function(e,r){
-		        leng2=r.toNumber(); 	
+		        document.getElementById('r').innerHTML = r.toNumber(); 	
 		});
 		 		
 
