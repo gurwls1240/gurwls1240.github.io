@@ -21,6 +21,7 @@
   <li>위치 입력<input id="mymap" type="text"></li>
 <!--  <input type="submit" name="submit" value="Submit" > -->    
 </ul> 
+<button onclick="setName()">스터디 </button>
    <button onclick="setstudyValue()">스터디 </button>
 
 </body>
@@ -686,6 +687,28 @@ function setstudyValue() {
    });
  });
 }
+	
+	function setName(){
+		var newName = document.getElementById('myName').value;
+		var txid;
+
+		EDB.createPerson(newName, function(e,r){
+			//트랜잭션 보내면 그거 보여주는걸 해야하나..... 그냥 안보여줘도 되나?
+			//document.getElementById('resultName').innerHTML = 'Transaction id: ' + r + '<span id="pendingName" style="color:red;">(Pending)</span>';
+			txid = r;
+		});
+
+		var filter = web3.eth.filter('latest');
+		filter.watch(function(e, r) {
+			web3.eth.getTransaction(txid, function(e,r){
+				if (r != null && r.blockNumber > 0) {
+					document.getElementById('myName').value = "";
+					filter.stopWatching();
+				}
+			});
+		});
+		
+	}
 
 </script>
 </html>
