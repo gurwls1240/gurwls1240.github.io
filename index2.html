@@ -1413,9 +1413,9 @@ var abi = [
   function getstudyValue() {
 		$("#showStudies").empty();
 
-	  var leng2 =3;
 	  
 		EDB.getStudyNum(function(e,r){
+			var leng2 =3;
 			if(r>leng2) {leng2 = r;}
 		});
 
