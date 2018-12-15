@@ -14,20 +14,20 @@
 <body>
 <h3>스터디 정보 입력</h3>
 <ul>
-  <li>날짜입력(1~31): <input type="text" id="myday"></li>
-  <li>달(영어로) 입력(JAN~DEC)<input id="mymonth" type="text"></li>
-  <li>제목 입력<input id="mytitle" type="text"></li>
-  <li>시간대 입력(string)<input id="myclcok" type="text"></li>
-  <li>위치 입력<input id="mymap" type="text"></li>
+	<form action="#" onsubmit="setstudyValue();return false">
+  <li>날짜입력(1~31): <input type="text" id="myday" placeholder="이름:" required="required"></li>
+  <li>달(영어로) 입력(JAN~DEC)<input id="mymonth" type="text" placeholder="이름:" required="required"></li>
+  <li>제목 입력<input id="mytitle" type="text" placeholder="이름:" required="required"></li>
+  <li>시간대 입력(string)<input id="myclcok" type="text" placeholder="이름:" required="required"></li>
+  <li>위치 입력<input id="mymap" type="text" placeholder="이름:" required="required"></li>
 <!--  <input type="submit" name="submit" value="Submit" > -->    
+		<button >스터디 등록하기</button>
+	</form>
 </ul> 
 <form action="#" onsubmit="setName();return false">
-<div class="counter_form_title">courses now</div>
 <input type="text" class="counter_input" id="myName" placeholder="이름:" required="required">
-<button class="counter_form_button">본인 등록하기</button>
+<button >스터디 등록하기</button>
 </form>
-<button onclick="setName()">스터디 </button>
-   <button onclick="setstudyValue()">스터디 </button>
 
 </body>
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
