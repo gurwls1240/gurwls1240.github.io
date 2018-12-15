@@ -147,9 +147,9 @@
 									<div class="home_slider_title">The Premium System Education</div>
 									<div class="home_slider_subtitle">Future Of Online Education Platform</div>
 									<div class="home_slider_form_container">
-										<form action="#" id="home_search_form_1" class="home_search_form d-flex flex-lg-row flex-column align-items-center justify-content-between">
+										<form name='form1" action="#" id="home_search_form_1" class="home_search_form d-flex flex-lg-row flex-column align-items-center justify-content-between">
 											<div class="d-flex flex-row align-items-center justify-content-start">
-												<input type="search" class="home_search_input" placeholder="Keyword Search" required="required">
+												<input type="text" accesskey="s" title="검색어" class="home_search_input" name="p_searchtext" value="ff"maxlength="20" placeholder="Keyword Search" required="required">
 												<select class="dropdown_item_select home_search_input">
 													<option>Category - IT Education</option>
 													<option>language - C/C++/C#</option>
@@ -167,7 +167,7 @@
 													<option> 100~ educoin </option>
 												</select>
 											</div>
-											<button type="submit" class="home_search_button">search</button>
+											<button type="submit" class="home_search_button" onclick="whenSearch();">search</button>
 										</form>
 									</div>
 								</div>
@@ -1450,6 +1450,53 @@ var contractAddress = '0x8871b5646e724b8421eb01b3d1040d85f2982fc4'; //
 		});
 		
 	}
+	
+	function whenSearch() {
+    	
+        // submit 전에 추가
+		if(checkString() == true) {
+				return;	
+		}
+        
+        document.form1.p_process.value = "listPage";
+        document.form1.target = "_self";
+        document.form1.action= "courses.html";
+        document.form1.submit();
+    }
+    
+    function submitenter(myfield,e) {
+		var keycode;
+	
+		if (window.event) keycode = window.event.keyCode;
+		else if (e) keycode = e.which;
+		else return true;
+	
+		if (keycode == 13) {
+			whenSearch();
+			return false;
+		} else return true;
+	}
+    
+	//javaScript 코드 필터링 fn
+	function checkString()
+	{
+		var char = new Array('\<', '\>', '\"', '\'', '\%', '\;', '\(', '\)', '\&','\+');					
+		var check_flag = false;
+		
+		for(var i = 0; i < 10; i++){
+			
+			// 체크할 input field 추가
+			if(document.form1.p_searchtext.value.indexOf(char[i]) > -1){
+				alert("검색어에 \< \> \" \' \% \; \( \) \& \+ 등의 특수문자 사용이 제한됩니다.");
+				check_flag = true;
+				break;
+			}
+	      }							
+	      return check_flag;
+	}
+
+	
+	
 </script>
 	
 </html>
