@@ -228,32 +228,7 @@
 							<div class="sidebar_latest">
 
 								<!-- Latest Course -->
-								<div class="latest d-flex flex-row align-items-start justify-content-start">
-									<div class="latest_image"><div><img src="images/latest_1.jpg" alt=""></div></div>
-									<div class="latest_content">
-										<div class="latest_title"><a href="course.html">How to Design a Logo a Beginners Course</a></div>
-										<div class="latest_price">Free</div>
-									</div>
-								</div>
-
-								<!-- Latest Course -->
-								<div class="latest d-flex flex-row align-items-start justify-content-start">
-									<div class="latest_image"><div><img src="images/latest_2.jpg" alt=""></div></div>
-									<div class="latest_content">
-										<div class="latest_title"><a href="course.html">Photography for Beginners Masterclass</a></div>
-										<div class="latest_price">$170</div>
-									</div>
-								</div>
-
-								<!-- Latest Course -->
-								<div class="latest d-flex flex-row align-items-start justify-content-start">
-									<div class="latest_image"><div><img src="images/latest_3.jpg" alt=""></div></div>
-									<div class="latest_content">
-										<div class="latest_title"><a href="course.html">The Secrets of Body Language</a></div>
-										<div class="latest_price">$220</div>
-									</div>
-								</div>
-
+								<div class="row courses_row" id="showlatestCourses"></div>
 							</div>
 						</div>
 
@@ -1097,6 +1072,21 @@ var abi = [
 		}
 		web3.eth.getBlockNumber(function(e,r){
                 document.getElementById('lastBlockvideo').innerHTML = r; 
+                                                     });
+	}
+	function getlatestvideoValue() {
+		$("#showlatestCourses").empty();
+		
+		var count = 3;
+		
+
+		for(a = count; a > -1; a--){
+			EDB.getVideoList(a, function(e,r){
+				$("#showCourses").append($('<div class="latest d-flex flex-row align-items-start justify-content-start"><div class="latest_image"><div><img src="images/latest_3.jpg" alt=""></div></div><div class="latest_content"><div class="latest_title"><a href="course.html">'+r[2]+'</a></div><div class="latest_price">'+r[4]+'</div></div></div>'))
+			});
+		}
+		web3.eth.getBlockNumber(function(e,r){
+                document.getElementById('lastBlockvideolatest').innerHTML = r; 
                                                      });
 	}
   
