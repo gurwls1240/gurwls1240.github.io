@@ -1053,6 +1053,7 @@ var abi = [
 		EDBContract = web3.eth.contract(abi);
 		EDB = EDBContract.at(contractAddress);
 		getvideoValue();
+		getlatestvideoValue();
 	}
 	function getLink(addr) {
 		return '<a target="_blank" href=https://testnet.etherscan.io/address/' + addr + '>' + addr +'</a>';
