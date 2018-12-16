@@ -584,7 +584,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 	
 <script>
-var contractAddress = '0x48dfd2264a15c055019e74f2a1495eaaa822a06d'; //
+var contractAddress = '0x193b4500a9f67a3dd6b1f0eaa1ac9cf7d2a8fa30';
 var abi = [
 	{
 		"constant": true,
@@ -748,32 +748,6 @@ var abi = [
 		],
 		"payable": false,
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_video",
-				"type": "string"
-			},
-			{
-				"name": "_title",
-				"type": "string"
-			},
-			{
-				"name": "_summary",
-				"type": "string"
-			},
-			{
-				"name": "_price",
-				"type": "uint16"
-			}
-		],
-		"name": "uploadVideo",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -950,6 +924,36 @@ var abi = [
 		"type": "function"
 	},
 	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_video",
+				"type": "string"
+			},
+			{
+				"name": "_category",
+				"type": "string"
+			},
+			{
+				"name": "_title",
+				"type": "string"
+			},
+			{
+				"name": "_summary",
+				"type": "string"
+			},
+			{
+				"name": "_price",
+				"type": "uint16"
+			}
+		],
+		"name": "uploadVideo",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"constant": true,
 		"inputs": [
 			{
@@ -970,6 +974,49 @@ var abi = [
 			{
 				"name": "",
 				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_key",
+				"type": "bytes32"
+			}
+		],
+		"name": "getVideoDetail",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "string"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "address"
 			}
 		],
 		"payable": false,
@@ -1032,10 +1079,6 @@ var abi = [
 			{
 				"name": "",
 				"type": "uint256"
-			},
-			{
-				"name": "",
-				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -1050,6 +1093,29 @@ var abi = [
 			{
 				"name": "",
 				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_add",
+				"type": "address"
+			}
+		],
+		"name": "getTeacherTotal",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"payable": false,
@@ -1107,20 +1173,6 @@ var abi = [
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getStudyNum",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
