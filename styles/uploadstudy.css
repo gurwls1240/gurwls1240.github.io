@@ -48,9 +48,9 @@
 	position: relative;
 	top: 30px;
 	left: 0;
-	right: 30px;
-	width: 380px;
-	height: 100%;
+	right: 0;
+	width: 500px;
+	height: 200%;
 	background: #FFFFFF;
 	padding-left: 40px;
 	padding-right: 40px;
