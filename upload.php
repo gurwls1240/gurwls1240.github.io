@@ -6,7 +6,7 @@ Upload: <r /><br>Type: <br />Size: 0 Kb<br />Stored in:  already exists. <html>
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 <script>
 	var JSDATA = null;
-	var contractAddress = '0x193b4500a9f67a3dd6b1f0eaa1ac9cf7d2a8fa30';
+	var contractAddress = '0x5fa3c81a8efc52bee047dfebeddfdb1084c6cbef';
 var abi = [
 	{
 		"constant": true,
