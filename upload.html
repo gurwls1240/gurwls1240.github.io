@@ -14,7 +14,7 @@
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.2.3/milligram.min.css">
 <link rel="stylesheet" type="text/css" href="styles/uploadstudy.css">
-  <title>스터디 정보 입력</title>
+  <title>강의 정보 입력</title>
   <style>
   </style>
 </head>
@@ -35,17 +35,15 @@
 			<form class="counter_form_content d-flex flex-column align-items-center justify-content-center" action="upload.php"  method="post" enctype="multipart/form-data">
 							<div class="counter_form_title">Lectures now</div>
 							
-                <input type="text" name="title" >
+                <input type="text" name="title" placeholder="제목:" >
         <br />
-        <textarea name ='summary' rows='8' cols='80' onfocus='this.value=""'>너무 길지않게 적어주세요.</textarea>
+        <textarea name ='summary' rows='8' cols='80' onfocus='this.value=""' placeholder="대략적인 강의 소개" ></textarea>
         <br />
         <label for="file">Filename:</label>
         <input type="file" name="file" >
         <br />
-        <input type="text" name="price" >
+        <input type="text" name="price" placeholder="강의 가격" >
         <input type="submit" name="submit" value="Submit" >
-     
-							<button class="counter_form_button"> 등록하기</button>
 						</form>
                                              
 					</div>
