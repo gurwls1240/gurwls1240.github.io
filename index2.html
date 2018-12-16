@@ -766,7 +766,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 	
 <script>
-var contractAddress = '0x5fa3c81a8efc52bee047dfebeddfdb1084c6cbef';
+var contractAddress = '0xa8fda578d7c2d4591f61983bedc57e7f26807892';
 var abi = [
 	{
 		"constant": true,
@@ -803,50 +803,6 @@ var abi = [
 		],
 		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_day",
-				"type": "uint256"
-			},
-			{
-				"name": "_month",
-				"type": "string"
-			},
-			{
-				"name": "_studytitle",
-				"type": "string"
-			},
-			{
-				"name": "_studyclocka",
-				"type": "string"
-			},
-			{
-				"name": "_map",
-				"type": "string"
-			}
-		],
-		"name": "uploadStudy",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "ceoAddress",
-		"outputs": [
-			{
-				"name": "",
-				"type": "address"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -894,6 +850,25 @@ var abi = [
 		"constant": true,
 		"inputs": [
 			{
+				"name": "_index",
+				"type": "uint256"
+			}
+		],
+		"name": "getStudyList2",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
 				"name": "",
 				"type": "address"
 			}
@@ -916,6 +891,40 @@ var abi = [
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_day",
+				"type": "uint256"
+			},
+			{
+				"name": "_month",
+				"type": "string"
+			},
+			{
+				"name": "_studytitle",
+				"type": "string"
+			},
+			{
+				"name": "_sodyd",
+				"type": "string"
+			},
+			{
+				"name": "_studyclocka",
+				"type": "string"
+			},
+			{
+				"name": "_map",
+				"type": "string"
+			}
+		],
+		"name": "uploadStudy",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -1133,6 +1142,20 @@ var abi = [
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getPersonNum",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -1358,15 +1381,18 @@ var abi = [
 		"type": "function"
 	},
 	{
-		"inputs": [
+		"constant": true,
+		"inputs": [],
+		"name": "getStudyNum",
+		"outputs": [
 			{
-				"name": "CEOaddress",
-				"type": "address"
+				"name": "",
+				"type": "uint256"
 			}
 		],
 		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "constructor"
+		"stateMutability": "view",
+		"type": "function"
 	},
 	{
 		"anonymous": false,
