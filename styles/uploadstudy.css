@@ -46,11 +46,11 @@
 .counter_form
 {
 	position: relative;
-	top: 30px;
-	left: 0;
+	top: 80px;
+	left: 80px;
 	right: 0;
-	width: 500px;
-	height: 200%;
+	width: 700px;
+	height: 500%;
 	background: #FFFFFF;
 	padding-left: 40px;
 	padding-right: 40px;
