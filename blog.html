@@ -1073,10 +1073,10 @@ var abi = [
 		EDB.getStudyNum(function(e,r){
 			for(a = r-1; a > r-7; a--){
 				if(a==-1) break;
-				EDB.getStudyList(a, function(e,r){
-					var r = r;  
-					EDB.getStudyList2(a, function(e,r2){
-						$("#showBlogs").append($('<div class="col-lg-6 courses_col"><div class="course"><div class="course_image"><img src="images/event_1.jpg" alt=""></div><div class="event_body d-flex flex-row align-items-start justify-content-start"><div class="event_date"><div class="d-flex flex-column align-items-center justify-content-center trans_200"><div class="event_day trans_200">'+r[1]+'</div> <div class="event_month trans_200">'+r[2]+'</div></div></div><div class="event_content"><div class="event_title"><a href="#">'+r[3]+'</a></div><div class="event_info_container"><div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>'+r[4]+'</span></div><div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>'+r[5]+'</span></div><div class="event_text"><p>'+ r2[0] +'</p></div></div></div></div></div></div>'))
+				EDB.getStudyList(a, function(e,r2){
+					var r = r; 
+					EDB.getStudyList2(a, function(e,r3){
+						$("#showBlogs").append($('<div class="col-lg-6 courses_col"><div class="course"><div class="course_image"><img src="images/event_1.jpg" alt=""></div><div class="event_body d-flex flex-row align-items-start justify-content-start"><div class="event_date"><div class="d-flex flex-column align-items-center justify-content-center trans_200"><div class="event_day trans_200">'+r2[1]+'</div> <div class="event_month trans_200">'+r2[2]+'</div></div></div><div class="event_content"><div class="event_title"><a href="#">'+r2[3]+'</a></div><div class="event_info_container"><div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>'+r2[4]+'</span></div><div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>'+r2[5]+'</span></div><div class="event_text"><p>'+ r3[0] +'</p></div></div></div></div></div></div>'))
 					});
 				}); 
 			}
