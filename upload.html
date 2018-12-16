@@ -35,15 +35,15 @@
 			<form class="counter_form_content d-flex flex-column align-items-center justify-content-center" action="upload.php"  method="post" enctype="multipart/form-data">
 							<div class="counter_form_title">Lectures now</div>
 							
-                <input type="text" name="title" placeholder="제목:" >
+         <input type="text" name="title" placeholder="제목 :" >
         <br />
-        <textarea name ='summary' rows='8' cols='80' onfocus='this.value=""' placeholder="대략적인 강의 소개" ></textarea>
+        <textarea name ='summary' rows='8' cols='80' onfocus='this.value=""' placeholder="대략적인 강의 소개 : (너무 길지 않게 적어주세요)" ></textarea>
         <br />
-        <label for="file">Filename:</label>
-        <input type="file" name="file" >
+        
+        <input type="file" name="file" placeholder="업할 영상 :" >
         <br />
-        <input type="text" name="price" placeholder="강의 가격" >
-        <input type="submit" name="submit" value="Submit" >
+        <input type="text" name="price" placeholder="강의 가격 :" >
+        <input type="submit" name="submit" value="Submit" class="counter_form_button">
 						</form>
                                              
 					</div>
