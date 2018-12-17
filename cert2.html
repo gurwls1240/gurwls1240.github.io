@@ -13,24 +13,14 @@
  
 		<hr style="margin: 20px 20px 20px 20px; border: double; color: #14bdee; height: 4px;">
  
-		<h3>Thank you for using Edu block to learn and teach
-	<ul>        
-		<li><a href="index2.html"> <span>동영상이나 스터디 타이틀 넣을거임</span> </a></li>
-		<li><a href="index2.html"> 동영상이나 스터디 타이틀 넣을거임 </a></li>
-		<li><a href="index2.html"> 동영상이나 스터디 타이틀 넣을거임</a></li>
-			<li><a href="index2.html"> 동영상이나 스터디 타이틀 넣을거임 </a></li>
-			<li><a href="index2.html"> 동영상이나 스터디 타이틀 넣을거임</a> </li>
-				<li><a href="index2.html"> 동영상이나 스터디 타이틀 넣을거임 </a></li>
-				<li><a href="index2.html"> 동영상이나 스터디 타이틀 넣을거임</a> </li>
-				<li><a href="index2.html"> 동영상이나 스터디 타이틀 넣을거임 </a></li>
-					<li><a href="index2.html"> 동영상이나 스터디 타이틀 넣을거임</a> </li>
-					<li><a href="index2.html"> 동영상이나 스터디 타이틀 넣을거임 </a></li>
-					<li><a href="index2.html"> 동영상이나 스터디 타이틀 넣을거임</a> </li>
-					  <li><a href="index2.html"> 동영상이나 스터디 타이틀 넣을거임 </a></li>
-				          <li><a href="index2.html"> 동영상이나 스터디 타이틀 넣을거임</a> </li>
-					  <li><a href="index2.html"> 동영상이나 스터디 타이틀 넣을거임</a> </li>					
-		</ul>
-	</h3>
+		<h3>Thank you for using Edu block to learn and teach      
+	
+		<ul id="showStudies">
+			<li id="showCourses"></li>
+			</ul>
+		
+	        </h3>
+	
 		<h2>위의 사실을 증명합니다.</h2>
 		<p>This certificate is proved by EduBlock. All Rights Reserved. Copyright by Edublock.</p>		
 	</div>
@@ -79,79 +69,31 @@ var contractAddress = '0x4e6a56fce0149154d2319b5b2eabd36d309b49a4';
 		EDBContract = web3.eth.contract(abi);
 		EDB = EDBContract.at(contractAddress);
 		getvideoValue();
-        getstudyValue();
+                getstudyValue();
 		getValue();
 	}
 
-	function getValue(){
-		$("#milestones").append($('<div class="milestone"> </div> <div class="milestone">'));
-		
-		EDB.getStudyNum(function(e,r){
-			$("#milestones").append($('<div class="milestone"> <div class="milestone_counter" data-end-value="'+ r +'">'+ r +'</div> <div class="milestone_text">스터디 갯수</div> </div>'));
-		});
-		
-		EDB.getVideoNum(function(e,r){
-			$("#milestones").append($('<div class="milestone"> <div class="milestone_counter" data-end-value="'+ r +'">'+ r +'</div> <div class="milestone_text">교육 동영상 갯수</div> </div>'));
-		});
-			
-		EDB.getPersonNum(function(e,r){ 
-			$("#milestones").append($('<div class="milestone"> <div class="milestone_counter" data-end-value="'+ r +'">'+ r +'</div> <div class="milestone_text">회원 수</div> </div>'));
-		});
-	}
 
 	function getvideoValue() {
 		$("#showCourses").empty();
-
-		EDB.getVideoNum(function(e,r){
-			for(a = r-1; a > r-4; a--){
-				if(a==-1) break;
-				EDB.getVideoList(a, function(e,r){
-					$("#showCourses").append($('<div class="col-lg-4 course_col"> <div class="course"> <div class="course_image"><img src="images/course_1.jpg" alt=""></div> <div class="course_body"> <h3 class="course_title"><a href="javascript:viewDetail(\'' + r[0] +'\')" >'+ r[2] +'</a></h3> <div class="course_teacher">'+ r[1] +'</div> <div class="course_text"> <p>'+ r[3] +'</p> </div> </div> <div class="course_footer"> <div class="course_footer_content d-flex flex-row align-items-center justify-content-start"> <div class="course_info"> <i class="fa fa-graduation-cap" aria-hidden="true"></i> <span>'+ r[5] +'</span> </div> <div class="course_info"> <i class="fa fa-star" aria-hidden="true"></i> <span>'+ 0 +' Ratings</span> </div> <div class="course_price ml-auto">EDB '+ r[4] +'</div> </div> </div> </div> </div>'))
-				});
-			}
+		
+		EDB.getVideoList(a, function(e,r){
+			$("#showCourses").append($('<a href="blog_single.html"><span>'+r[2]+'</span></a>'))
 		});
+
 	}
   
   function getstudyValue() {
 		$("#showStudies").empty();
 
-		EDB.getStudyNum(function(e,r){
-			for(a = r-1; a > r-4; a--){
-				if(a==-1) break;
-				else getStudy(a);
-					
-			}
-		});
-	}
-
-	function getStudy(a){
 		EDB.getStudyList(a, function(e,r){
-			$("#showStudies").append($('<div class="col-lg-4 event_col"><div class="event event_left"><div class="event_image"><img src="images/event_1.jpg" alt=""></div><div class="event_body d-flex flex-row align-items-start justify-content-start"><div class="event_date"><div class="d-flex flex-column align-items-center justify-content-center trans_200"><div class="event_day trans_200">'+r[1]+'</div> <div class="event_month trans_200">'+r[2]+'</div></div></div><div class="event_content"><div class="event_title"><a href="javascript:viewBlog(\'' + a +'\')" >'+ r[3] +'</a></div><div class="event_info_container"><div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>'+r[4]+'</span></div><div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>'+r[5]+'</span></div></div></div></div></div></div>'))
+			$("#showStudies").append($('<li><a href="blog_single.html"><span>'+r[3]+'</span> </a></li>'))
 		}); 
 	}
+	
+	
+	
 
-	function setName(){
-		var newName = document.getElementById('myName').value;
-		var txid;
-
-		EDB.createPerson(newName, function(e,r){
-			//트랜잭션 보내면 그거 보여주는걸 해야하나..... 그냥 안보여줘도 되나?
-			//document.getElementById('resultName').innerHTML = 'Transaction id: ' + r + '<span id="pendingName" style="color:red;">(Pending)</span>';
-			txid = r;
-		});
-
-		var filter = web3.eth.filter('latest');
-		filter.watch(function(e, r) {
-			web3.eth.getTransaction(txid, function(e,r){
-				if (r != null && r.blockNumber > 0) {
-					document.getElementById('myName').value = "";
-					window.location = "index.html";
-					filter.stopWatching();
-				}
-			});
-		});
-		
-	}
 
 	function viewDetail(obj){
 		window.location = "course.html?" + obj;
