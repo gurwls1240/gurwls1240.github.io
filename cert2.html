@@ -812,15 +812,17 @@ var contractAddress = '0x1ea8f464c6353ce4e66b7e176959467dc3433eb8';
   function getvideoValue() {
 		$("#showCourses").empty();
 		
-	  EDB.getMyClassNum(function(e,r){
-			for(var a = r-1; a > -1; a--){
-				if(a==-1) break;
+//	  EDB.getMyClassNum(function(e,r){
+//			for(var a = r-1; a > -1; a--){
+//				if(a==-1) break;
+	  
+	  for(a=3;a>-1;a--)
 		EDB.getMyClass(a, function(e,r2){
 			$("#showCourses").append($('<li>강의 : <a style="text-decoration:none; color:#14bdee;" href="blog_single.html"><span>'+r2+'</span></a></li>'))
 		});
 	}
-  });
-	}
+//  });
+//	}
 	
   function getstudyValue() {
 		$("#showStudies").empty();
