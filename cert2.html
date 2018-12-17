@@ -15,9 +15,7 @@
  
 		<h3>Thank you for using Edu block to learn and teach      
 	
-		<ul id="showStudies">
-			<li id="showStudies"></li>
-			<li id="showCourses"></li>
+		<ul id="showStudies" id="showCourses">
 			</ul>
 		
 	        </h3>
@@ -78,7 +76,7 @@ var contractAddress = '0x4e6a56fce0149154d2319b5b2eabd36d309b49a4';
 		$("#showCourses").empty();
 		
 		EDB.getVideoList(0,function(e,r){
-			$("#showCourses").append($('<a href="blog_single.html"><span>'+r[2]+'</span></a>'))
+			$("#showCourses").append($('<li><a href="blog_single.html"><span>'+r[2]+'</span></a></li>'))
 		});
 
 	}
@@ -87,7 +85,7 @@ var contractAddress = '0x4e6a56fce0149154d2319b5b2eabd36d309b49a4';
 		$("#showStudies").empty();
 
 		EDB.getStudyList(0,function(e,r){
-			$("#showStudies").append($('<li><a href="blog_single.html"><span>'+r[3]+'</span> </a></li>'))
+			$("#showStudies").append($('<li><a href="blog_single.html"><span>'+r[3]+'</span></a></li>'))
 		}); 
 	}
 	
