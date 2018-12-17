@@ -16,8 +16,14 @@
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 
 <link rel="stylesheet" type="text/css" href="styles/uploadstudy.css">
-  <title>강의 정보 입력</title>
+  <title>CERTIFICATE</title>
   <style>
+	  table {
+        width: 100%;
+      }
+      table, th, td {
+        border: 1px solid #bcbcbc;
+      }
   </style>
 </head>
 <body>
@@ -35,22 +41,37 @@
                         
                         
             
-			<form class="counter_form_content d-flex flex-column align-items-center justify-content-center" action="upload.php"  method="post" enctype="multipart/form-data">
-				</br>			
-				<div class="counter_form_title">Lectures now</div>
-	<input type="text" name="category" placeholder="카테고리 :" >					
-         <input type="text" name="title" placeholder="제목 :">
-        <textarea name ='summary' rows='8' cols='80' onfocus='this.value=""' placeholder="대략적인 강의 소개 : (너무 길지 않게 적어주세요)" ></textarea>
-        <table border="solid;">
-    <tr>
-        <td>업로드 영상 : <input type="file" name="file"></td>
-    </tr>
-</table>
-        <input type="text" name="price" placeholder="강의 가격 :"  >
-				</br>
-        <input type="submit" name="submit" value="Submit" style="background-color:#14bdee; border: #14bdee;">
-						</form>
-                                             
+			<table>
+      <caption>증명서</caption>
+      <thead>
+        <tr>
+          <th></th>
+          <th>LECTURE</th>
+          <th>STUDY</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>UPLOAD</th>
+          <td>Dolor</td>
+          <td>Dolor</td>
+          <td rowspan="2">Dolor</td>
+        </tr>
+        <tr>
+          <th>ATTEND</th>
+          <td>Dolor</td>
+          <td>Dolor</td>
+          <td>Dolor</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="1">KEY</td>
+		<td colspan="1">VIDEO KEY</td>
+		<td colspan="1">STUDY KEY</td>
+        </tr>
+      </tfoot>
+    </table>
                   
                   
 					</div>
