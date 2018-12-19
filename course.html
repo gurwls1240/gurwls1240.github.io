@@ -1,0 +1,550 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	
+<script>
+		var query = window.location.search;
+		// Skip the leading ?, which should always be there, 
+		// but be careful anyway
+		if (query.substring(0, 1) == '?') {
+		  query = query.substring(1);
+		}
+	  </script>
+<head>
+<title>Course Details</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Unicat project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/course.css">
+<link rel="stylesheet" type="text/css" href="styles/course_responsive.css">
+<link rel="stylesheet" type="text/css" href="styles/blog_single.css">
+<link rel="stylesheet" type="text/css" href="styles/blog_single_responsive.css">
+</head>
+<body>
+
+<div class="super_container">
+
+	<!-- Header -->
+
+	<header class="header">
+			
+		<!-- Top Bar -->
+		<div class="top_bar">
+			<div class="top_bar_container">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
+								<ul class="top_bar_contact_list">
+									<li><div class="question">Have any questions?</div></li>
+									<li>
+										<i class="fa fa-phone" aria-hidden="true"></i>
+										<div>010-3647-6227</div>
+									</li>
+									<li>
+										<i class="fa fa-envelope-o" aria-hidden="true"></i>
+										<div>gurwls1240@naver.com</div>
+									</li>
+								</ul>
+								<div class="top_bar_login ml-auto">
+									<div class="login_button"><a href="#layerregister">Register</a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>				
+		</div>
+
+		<!-- Header Content -->
+		<div class="header_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="header_content d-flex flex-row align-items-center justify-content-start">
+							<div class="logo_container">
+								<a href="index.html">
+									<div class="logo_text">Edu<span>Block</span></div>
+								</a>
+							</div>
+							<nav class="main_nav_contaner ml-auto">
+								<ul class="main_nav">
+									<li><a href="index.html">Home</a></li>
+									<li><a href="about.html">About</a></li>
+									<li class="active"><a href="courses.html">Courses</a></li>
+									<li><a href="blog.html">Blog</a></li>
+									<!-- <li><a href="#">Page</a></li> -->
+									<li><a href="contact.html">Contact</a></li>
+								</ul>
+								<div class="search_button"><i class="fa fa-search" aria-hidden="true"></i></div>
+
+								<!-- Hamburger -->
+
+								<div class="shopping_cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></div>
+								<div class="hamburger menu_mm">
+									<i class="fa fa-bars menu_mm" aria-hidden="true"></i>
+								</div>
+							</nav>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Header Search Panel -->
+		<div class="header_search_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="header_search_content d-flex flex-row align-items-center justify-content-end">
+							<form action="#" class="header_search_form">
+								<input type="search" class="search_input" placeholder="Search" required="required">
+								<button class="header_search_button d-flex flex-column align-items-center justify-content-center">
+									<i class="fa fa-search" aria-hidden="true"></i>
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>			
+		</div>			
+	</header>
+
+	<!-- Menu -->
+
+	<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
+		<div class="search">
+			<form action="#" class="header_search_form menu_mm">
+				<input type="search" class="search_input menu_mm" placeholder="Search" required="required">
+				<button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+					<i class="fa fa-search menu_mm" aria-hidden="true"></i>
+				</button>
+			</form>
+		</div>
+		<nav class="menu_nav">
+			<ul class="menu_mm">
+				<li class="menu_mm"><a href="index.html">Home</a></li>
+				<li class="menu_mm"><a href="about.html">About</a></li>
+				<li class="menu_mm"><a href="courses.html">Courses</a></li>
+				<li class="menu_mm"><a href="blog.html">Blog</a></li>
+				<!-- <li class="menu_mm"><a href="#">Page</a></li> -->
+				<li class="menu_mm"><a href="contact.html">Contact</a></li>
+			</ul>
+		</nav>
+	</div>
+	
+	<!-- Home -->
+
+	<div class="home">
+		<div class="breadcrumbs_container">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="breadcrumbs">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="courses.html">Courses</a></li>
+								<li>Course Details</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>			
+	</div>
+
+	<!-- Course -->
+
+	<div class="course">
+		<div class="container">
+			<div class="row">
+
+				<!-- Course -->
+				<div class="col-lg-8">
+					
+					<div class="course_container">
+						<div class="course_title" id="course_title"></div>
+						<div class="course_info d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+
+							<!-- Course Info Item -->
+							<div class="course_info_item">
+								<div class="course_info_title">Teacher:</div>
+								<!-- 각각의 선생에 대한 링크도 있네..... -->
+								<div class="course_info_text" id="course_teacher"></a></div>
+							</div>
+
+							<!-- Course Info Item -->
+							<div class="course_info_item">
+								<div class="course_info_title">Reviews:</div>
+								<div class="rating_r rating_r_4"><i></i><i></i><i></i><i></i><i></i></div>
+							</div>
+
+							<!-- Course Info Item -->
+							<div class="course_info_item">
+								<div class="course_info_title">Categories:</div>
+								<div class="course_info_text" id="course_category"></div>
+							</div>
+
+						</div>
+
+						<!-- Course Image -->
+						<div class="course_image"><img src="images/course_image.jpg" alt=""></div>
+
+						<!-- Course Tabs -->
+						<div class="course_tabs_container">
+							<div class="tabs d-flex flex-row align-items-center justify-content-start">
+								<div class="tab active">description</div>
+								<div class="tab">reviews</div>
+							</div>
+							<div class="tab_panels">
+
+								<!-- Description -->
+								<div class="tab_panel active">
+									<div class="tab_panel_content">
+										<div class="tab_panel_text" id="course_content">
+										</div>
+									</div>
+								</div>
+
+								<!-- Reviews -->
+								<div class="tab_panel tab_panel_2">
+									<div class="tab_panel_title">Course Review</div>
+
+									<!-- Rating -->
+									<div class="review_rating_container">
+										<div class="review_rating">
+											<div class="review_rating_num">4.5</div>
+											<div class="review_rating_stars">
+												<div class="rating_r rating_r_4"><i></i><i></i><i></i><i></i><i></i></div>
+											</div>
+											<div class="review_rating_text">(28 Ratings)</div>
+										</div>
+										<div class="review_rating_bars">
+											<ul>
+												<li><span>5 Star</span><div class="review_rating_bar"><div style="width:90%;"></div></div></li>
+												<li><span>4 Star</span><div class="review_rating_bar"><div style="width:75%;"></div></div></li>
+												<li><span>3 Star</span><div class="review_rating_bar"><div style="width:32%;"></div></div></li>
+												<li><span>2 Star</span><div class="review_rating_bar"><div style="width:10%;"></div></div></li>
+												<li><span>1 Star</span><div class="review_rating_bar"><div style="width:3%;"></div></div></li>
+											</ul>
+										</div>
+									</div>
+									
+									<!-- Comments -->
+									<div class="comments_container">
+										<ul class="comments_list" id="comments_list">
+										</ul>
+										<div class="add_comment_container">
+											<div class="add_comment_title">Write a comment</div>
+											<div class="add_comment_text">Please leave a lecture assessment. Help others! *</div>
+											<form class="comment_form" onsubmit="setReview();return false">
+												<div>
+													<div class="form_title">Review*</div>
+													<textarea class="comment_input comment_textarea" required="required" id="review_content"></textarea>
+												</div>
+												<div class="row">
+													<div class="col-md-6 input_col">
+														<div class="form_title">Star*</div>
+														<input type="text" class="comment_input" required="required" id="review_star">
+													</div>
+												</div>
+												<div>
+													<button type="submit" class="comment_button trans_200">submit</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Course Sidebar -->
+				<div class="col-lg-4">
+					<div class="sidebar">
+
+						<!-- Feature -->
+						<div class="sidebar_section">
+							<div class="sidebar_section_title">Course Feature</div>
+							<div class="sidebar_feature">
+								<div class="course_price" id="course_price">
+								</div>
+
+								<!-- Features -->
+								<div class="feature_list">
+									
+									<!-- Feature -->
+									<div class="feature d-flex flex-row align-items-center justify-content-start">
+										<div class="feature_title"><i class="fa fa-users" aria-hidden="true"></i><span>Lectures:</span></div>
+										<div class="feature_text ml-auto" id="course_student">
+										</div>
+									</div>
+
+								</div>
+								<div class="courses_button trans_200"><a href="javascript:playLecture()">강의 듣기</a></div>
+							</div>
+						</div>
+
+						<!-- Feature -->
+						<div class="sidebar_section">
+							<div class="sidebar_section_title">Teacher</div>
+							<div class="sidebar_teacher">
+								<div class="teacher_title_container d-flex flex-row align-items-center justify-content-start">
+									<div class="teacher_title">
+										<div class="teacher_name" id="course_teacher2"></a></div>
+										<div class="teacher_position"></div> <!-- 이 선생의 전공분야 -->
+									</div>
+								</div>
+								<div class="teacher_meta_container">
+									<!-- Teacher Rating -->
+									<div class="teacher_meta d-flex flex-row align-items-center justify-content-start">
+										<div class="teacher_meta_title">Average Rating:</div>
+										<div class="teacher_meta_text ml-auto" id="stars"><i class="fa fa-star" aria-hidden="true"></i></div>
+									</div>
+									<!-- Teacher Review -->
+									<div class="teacher_meta d-flex flex-row align-items-center justify-content-start">
+										<div class="teacher_meta_title">Review:</div>
+										<div class="teacher_meta_text ml-auto" id="reviews"><i class="fa fa-comment" aria-hidden="true"></i></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Footer -->
+
+	<footer class="footer">
+		<div class="footer_background" style="background-image:url(images/footer_background.png)"></div>
+		<div class="container">
+			<div class="row footer_row">
+				<div class="col">
+					<div class="footer_content">
+						<div class="row">
+
+							<div class="col-lg-3 footer_col">
+					
+								<!-- Footer About -->
+								<div class="footer_section footer_about">
+									<div class="footer_logo_container">
+										<a href="#">
+											<div class="footer_logo_text">Edu<span>Block</span></div>
+										</a>
+									</div>
+									<div class="footer_about_text">
+										<p>에듀블록과 SNS를 공유하세요</p>
+									</div>
+									<div class="footer_social">
+										<ul>
+											<li><a target="_blank" href="https://ko-kr.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+											<li><a target="_blank" href="https://plus.google.com/discover"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+											<li><a target="_blank" href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+											<li><a target="_blank" href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+										</ul>
+									</div>
+								</div>
+								
+							</div>
+
+							<div class="col-lg-3 footer_col">
+					
+								<!-- Footer Contact -->
+								<div class="footer_section footer_contact">
+									<div class="footer_title">Contact Us</div>
+									<div class="footer_contact_info">
+										<ul>
+											<li>Email: gurwls1240@naver.com</li>
+											<li>Phone:  +(82) 010 3647 6227</li>
+											<li>Gwangjin-gu neungdong-lo 209 Seoul, Republic of Korea</li>
+										</ul>
+									</div>
+								</div>
+								
+							</div>
+
+							<div class="col-lg-3 footer_col">
+					
+								<!-- Footer links -->
+								<div class="footer_section footer_links">
+									<div class="footer_title">Contact Us</div>
+									<div class="footer_links_container">
+										<ul>
+											<li><a href="index.html">Home</a></li>
+											<li><a href="about.html">About</a></li>
+											<li><a href="contact.html">Contact</a></li>
+											<!--<li><a href="#">Features</a></li> -->
+											<li><a href="courses.html">Courses</a></li>
+											<li><a href="blog.html">Blog</a></li>
+											<!-- <li><a href="#">Gallery</a></li> -->
+											<li><a href="#">FAQs</a></li>
+										</ul>
+									</div>
+								</div>
+								
+							</div>
+
+							<div class="col-lg-3 footer_col clearfix">
+					
+								<!-- Footer links -->
+								<div class="footer_section footer_mobile">
+									<div class="footer_title">Mobile</div>
+									<div class="footer_mobile_content">
+										<div class="footer_image"><a target="_blank" href="https://play.google.com/store"><img src="images/mobile_1.png" alt=""></a></div>
+										<div class="footer_image"><a target="_blank" href="https://www.apple.com/kr/"><img src="images/mobile_2.png" alt=""></a></div>
+									</div>
+								</div>
+								
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="styles/bootstrap4/popper.js"></script>
+<script src="styles/bootstrap4/bootstrap.min.js"></script>
+<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="plugins/easing/easing.js"></script>
+<script src="plugins/parallax-js-master/parallax.min.js"></script>
+<script src="plugins/colorbox/jquery.colorbox-min.js"></script>
+<script src="js/course.js"></script>
+</body>
+
+
+<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+<script>
+	var contractAddress = '0x40f5389fc678f89694efb00cf534d3358c6b4ba2';
+	var abi = [ { "constant": true, "inputs": [], "name": "name", "outputs": [ { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_spender", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "approve", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "_address", "type": "address" } ], "name": "getMyLectureNum", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "totalSupply", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_from", "type": "address" }, { "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "transferFrom", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "_index", "type": "uint256" } ], "name": "getStudyList2", "outputs": [ { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "address" } ], "name": "balances", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_day", "type": "uint256" }, { "name": "_month", "type": "string" }, { "name": "_studytitle", "type": "string" }, { "name": "_sodyd", "type": "string" }, { "name": "_studyclocka", "type": "string" }, { "name": "_map", "type": "string" } ], "name": "uploadStudy", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "decimals", "outputs": [ { "name": "", "type": "uint8" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_name", "type": "string" } ], "name": "createPerson", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "_key", "type": "bytes32" } ], "name": "checkMyCourse", "outputs": [ { "name": "", "type": "bool" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_address", "type": "address" }, { "name": "_index", "type": "uint256" } ], "name": "getMyClass", "outputs": [ { "name": "", "type": "bytes32" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "address" }, { "name": "", "type": "address" } ], "name": "allowed", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_key", "type": "bytes32" } ], "name": "getReviewStar", "outputs": [ { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_key", "type": "bytes32" } ], "name": "getVideo", "outputs": [ { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_owner", "type": "address" } ], "name": "balanceOf", "outputs": [ { "name": "balance", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_key", "type": "bytes32" } ], "name": "getReviewNum", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "symbol", "outputs": [ { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "transfer", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "getVideoNum", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_address", "type": "address" } ], "name": "getMyClassNum", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_address", "type": "address" }, { "name": "_index", "type": "uint256" } ], "name": "getMyLecture", "outputs": [ { "name": "", "type": "bytes32" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_video", "type": "string" }, { "name": "_category", "type": "string" }, { "name": "_title", "type": "string" }, { "name": "_summary", "type": "string" }, { "name": "_price", "type": "uint16" } ], "name": "uploadVideo", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "getPersonNum", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_key", "type": "bytes32" }, { "name": "_star", "type": "uint8" }, { "name": "_content", "type": "string" } ], "name": "setReview", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "_key", "type": "bytes32" }, { "name": "_index", "type": "uint256" } ], "name": "getReview", "outputs": [ { "name": "", "type": "uint256" }, { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_key", "type": "bytes32" } ], "name": "getVideoDetail", "outputs": [ { "name": "", "type": "string" }, { "name": "", "type": "string" }, { "name": "", "type": "string" }, { "name": "", "type": "string" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "address" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_owner", "type": "address" }, { "name": "_spender", "type": "address" } ], "name": "allowance", "outputs": [ { "name": "remaining", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_index", "type": "uint256" } ], "name": "getVideoList", "outputs": [ { "name": "", "type": "bytes32" }, { "name": "", "type": "string" }, { "name": "", "type": "string" }, { "name": "", "type": "string" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_add", "type": "address" } ], "name": "getTeacherTotal", "outputs": [ { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_index", "type": "uint256" } ], "name": "getStudyList", "outputs": [ { "name": "", "type": "string" }, { "name": "", "type": "uint256" }, { "name": "", "type": "string" }, { "name": "", "type": "string" }, { "name": "", "type": "string" }, { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_key", "type": "bytes32" } ], "name": "payForCourse", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "getStudyNum", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "inputs": [ { "name": "_CEOaddress", "type": "address" } ], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [ { "indexed": true, "name": "_from", "type": "address" }, { "indexed": true, "name": "_to", "type": "address" }, { "indexed": false, "name": "_value", "type": "uint256" } ], "name": "Transfer", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": true, "name": "_owner", "type": "address" }, { "indexed": true, "name": "_spender", "type": "address" }, { "indexed": false, "name": "_value", "type": "uint256" } ], "name": "Approval", "type": "event" } ];
+	var EDBContract;
+	var EDB;
+
+	window.addEventListener('load', function() {
+
+	// Checking if Web3 has been injected by the browser (Mist/MetaMask)
+		if (typeof web3 !== 'undefined') {
+			// Use Mist/MetaMask's provider
+			window.web3 = new Web3(web3.currentProvider);
+		} else {
+			console.log('No web3? You should consider trying MetaMask!')
+			// fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
+			window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+		}
+	// Now you can start your app & access web3 freely:
+	startApp();
+	});
+
+	function startApp() {
+		EDBContract = web3.eth.contract(abi);
+		EDB = EDBContract.at(contractAddress);
+		getValue();
+		getReviews();
+	}
+
+	function getValue() {
+
+		EDB.getVideoDetail(query, function(e,r){
+			$("#course_teacher").append($('<a href="#">' + r[0] + '</a>'));
+			$("#course_teacher2").append($('<a href="#">' + r[0] + '</a>'));
+			$("#course_category").append(r[1]);
+			$("#course_title").append(r[2]);
+			$("#course_content").append($('<p>' + r[3] + '</p>'));
+			$("#course_price").append("EDB " + String(r[4]));
+			$("#course_student").append(String(r[5]));
+			EDB.getTeacherTotal(r[6], function(e,r){
+				var star;
+				if(r[0]!=0) star = parsInt(Number(r[1])/Number(r[0]));
+				else star = 0;
+				$("#stars").append($('<span> '+ star +'</span>'));
+				$("#reviews").append($('<span> '+ r[0] +'</span>'));
+			});
+		});
+	}
+
+	function playLecture(){
+
+		EDB.checkMyCourse(query, function(e,r){
+			if(r==false){
+				//결제가 안되어있을때
+				var txid;
+				alert("결제하셔야 듣기가 가능합니다.");
+				EDB.payForCourse(query, function(e,r){
+					txid=r;
+				});
+				
+				var filter = web3.eth.filter('latest');
+				filter.watch(function(e, r) {
+					web3.eth.getTransaction(txid, function(e,r){
+						if (r != null && r.blockNumber > 0) {
+							alert("결제 완료되었습니다.");
+								EDB.getVideo(query, function(e,r){
+									window.location = "video.html?" + String(r);
+								});
+							filter.stopWatching();
+						}
+					});
+				});
+			} else {
+				//결제 완료되어있을때
+				EDB.getVideo(query, function(e,r){
+					window.location = "video.html?" + String(r);
+				});
+			}
+		});
+		
+	}
+
+	function setReview(){
+		var star = document.getElementById('review_star').value;
+		var content = document.getElementById('review_content').value;
+		var txid
+		EDB.setReview(query, star, content, function(e,r){
+					txid=r;
+		});
+
+		var filter = web3.eth.filter('latest');
+		filter.watch(function(e, r) {
+			web3.eth.getTransaction(txid, function(e,r){
+				if (r != null && r.blockNumber > 0) {
+					filter.stopWatching();
+					alert("평가가 등록되었습니다.");
+					window.location = "course.html?" + String(query);
+				}
+			});
+		});
+	}
+
+	function getReviews(){
+		EDB.getReviewNum(query, function(e,r){
+			for(i = 0; i<r; i++){
+				getReviewDetail(i);
+			}
+		});
+	}
+
+	function getReviewDetail(a){
+		EDB.getReview(query, a, function(e,r){
+			$('#comments_list').append($('<li><div class="comment_item d-flex flex-row align-items-start jutify-content-start"><div class="comment_image"><div><img src="images/comment_1.jpg" alt=""></div></div><div class="comment_content"><div class="comment_title_container d-flex flex-row align-items-center justify-content-start"><div class="comment_rating"><div class="rating_r rating_r_' + r[0] + '"><i></i><i></i><i></i><i></i><i></i></div></div></div><div class="comment_text"><p>' + r[1] + '</p></div></div></div></li>'));
+		});
+	}
+
+</script>
+</html>
