@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -147,9 +148,9 @@
 									<div class="home_slider_title">The Premium System Education</div>
 									<div class="home_slider_subtitle">Future Of Online Education Platform</div>
 									<div class="home_slider_form_container">
-										<form action="#" id="home_search_form_1" class="home_search_form d-flex flex-lg-row flex-column align-items-center justify-content-between">
+										<form name="form1" action="courses.html" id="home_search_form_1" class="home_search_form d-flex flex-lg-row flex-column align-items-center justify-content-between">
 											<div class="d-flex flex-row align-items-center justify-content-start">
-												<input type="search" class="home_search_input" placeholder="Keyword Search" required="required">
+												<input type="text" accesskey="s" title="검색어" class="home_search_input" name="p_searchtext" value="ff"maxlength="20" placeholder="Keyword Search" required="required">
 												<select class="dropdown_item_select home_search_input">
 													<option>Category - IT Education</option>
 													<option>language - C/C++/C#</option>
@@ -167,7 +168,7 @@
 													<option> 100~ educoin </option>
 												</select>
 											</div>
-											<button type="submit" class="home_search_button">search</button>
+											<button class="home_search_button" onclick="whenSearch();">search</button>
 										</form>
 									</div>
 								</div>
@@ -266,7 +267,6 @@
 		<div class="home_slider_nav home_slider_next"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
 	</div>
 
-	
 	<div class="newsletter">
 		<div class="newsletter_background parallax-window" data-parallax="scroll" data-image-src="images/newsletter.jpg" data-speed="0.8"></div>
 		<div class="container">
@@ -276,15 +276,15 @@
 
 						<!-- Newsletter Content -->
 						<div class="newsletter_content text-lg-left text-center">
-							<div class="newsletter_title">UPLOAD LECTURE FOR YOUR CAREER</div>
-							<div class="newsletter_subtitle">영상을 업로드 하시고 토큰을 받으세요!</div>
+							<div class="newsletter_title">Get a Certificate</div>
+							<div class="newsletter_subtitle">증명서를 뽑아 자신의 경력을 확인해보세요!</div>
 						</div>
 
 						<!-- Newsletter Form -->
 						<div class="newsletter_form_container ml-lg-auto">
-							<form action="upload.html" id="newsletter_form" class="newsletter_form d-flex flex-row align-items-center justify-content-center">
+							<form action="cert.html" id="newsletter_form" class="newsletter_form d-flex flex-row align-items-center justify-content-center">
 								<!--<input type="email" class="newsletter_input" placeholder="Your Email" required="required">-->
-								<button type="submit" class="newsletter_button">Upload</button>
+								<button type="submit" class="newsletter_button">GET</button>
 							</form>
 						</div>
 
@@ -292,7 +292,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- Features -->
 
 	<div class="features">
@@ -345,7 +345,7 @@
 
 			</div>
 		</div>
-	  <div class="courses_button trans_200"><a href="upload.html">Lecture Upload</a></div>
+		<div class="courses_button trans_200"><a href="upload.html">Lecture Upload</a></div>
 	</div>
 
 	<!-- Popular Courses -->
@@ -368,7 +368,7 @@
 					</div>
 			<div class="row">
 				<div class="col">
-					<div class="courses_button trans_200"><a href="#">view all courses</a></div>
+					<div class="courses_button trans_200"><a href="courses.html">view all courses</a></div>
 				</div>
 			</div>
 		</div>
@@ -387,46 +387,21 @@
 
 						<!-- Milestones -->
 
-						<div class="milestones d-flex flex-md-row flex-column align-items-center justify-content-between">
-							
-							<!-- Milestone -->
-							<div class="milestone">
-								<div class="milestone_counter" data-end-value="1575">0</div>
-								<div class="milestone_text">회원 수</div>
-							</div>
-
-							<!-- Milestone -->
-							<div class="milestone">
-								<div class="milestone_counter" data-end-value="120" data-sign-after="k">0</div>
-								<div class="milestone_text">오늘 방문자</div>
-							</div>
-
-							<!-- Milestone -->
-							<div class="milestone">
-								<div class="milestone_counter" <span id="lastBlock"></span></div>
-								<div class="milestone_text">블록 갯수</div>
-							</div>
-
-							<!-- Milestone -->
-							<div class="milestone">
-								<div class="milestone_counter" data-end-value="32520">0</div>
-								<div class="milestone_text">교육 동영상 갯수</div>
-							</div>
-
+						<div class="milestones d-flex flex-md-row flex-column align-items-center justify-content-between" id="milestones">
 						</div>
 					</div>
 
 				</div>
 			</div>
 
-			<div class="counter_form">
+			<div class="counter_form" id="layerregister">
 				<div class="row fill_height">
 					<div class="col fill_height">
-						<form class="counter_form_content d-flex flex-column align-items-center justify-content-center" action="#" onsubmit="setName();return false">
-							<div class="counter_form_title">courses now</div>
-							<input type="text" class="counter_input" id="myName" placeholder="이름:" required="required">
-							<button class="counter_form_button">본인 등록하기</button>
-						</form>
+						<form class="counter_form_content d-flex flex-column align-items-center justify-content-center" action="#" onsubmit="setName(); return false">
+							<div class="counter_form_title">Register Nickname</div>
+							<input type="text" class="counter_input" id="myName" placeholder="Your Nickname:" required="required">
+							<button class="counter_form_button">등록</button>
+						</form> 
 					</div>
 				</div>
 			</div>
@@ -455,97 +430,6 @@
 				<div class="col">
 					<div class="courses_button trans_200"><a href="uploadstudy.html">Study Upload</a></div>
 				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Team -->
-
-	<div class="team">
-		<div class="team_background parallax-window" data-parallax="scroll" data-image-src="images/team_background.jpg" data-speed="0.8"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="section_title_container text-center">
-						<h2 class="section_title">The Best Tutors in EduBlock</h2>
-						<div class="section_subtitle"><p>금주 최고의 강사로 뽑히신 회원님들을 표시합니다.</p></div>
-					</div>
-				</div>
-			</div>
-			<div class="row team_row">
-				
-				<!-- Team Item -->
-				<div class="col-lg-3 col-md-6 team_col">
-					<div class="team_item">
-						<div class="team_image"><img src="images/team_1.jpg" alt=""></div> <!-- 사진을 등록하면 표시 -->
-						<div class="team_body">
-							<div class="team_title"><a href="#">서혁진</a></div> <!-- 닉네임 리턴 -->
-							<div class="team_subtitle">Blockchain</div> <!-- 강의한 강의중 최고 평점을 받은 강의 제목 리턴 -->
-							<div class="social_list">
-								<ul>
-									<li><a target="_blank" href="https://ko-kr.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-									<li><a target="_blank" href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-									<li><a target="_blank" href="https://plus.google.com/discover"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Team Item -->
-				<div class="col-lg-3 col-md-6 team_col">
-					<div class="team_item">
-						<div class="team_image"><img src="images/team_2.jpg" alt=""></div>
-						<div class="team_body">
-							<div class="team_title"><a href="#">William James</a></div>
-							<div class="team_subtitle">Designer & Website</div>
-							<div class="social_list">
-								<ul>
-									<li><a target="_blank" href="https://ko-kr.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-									<li><a target="_blank" href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-									<li><a target="_blank" href="https://plus.google.com/discover"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Team Item -->
-				<div class="col-lg-3 col-md-6 team_col">
-					<div class="team_item">
-						<div class="team_image"><img src="images/team_3.jpg" alt=""></div>
-						<div class="team_body">
-							<div class="team_title"><a href="#">John Tyler</a></div>
-							<div class="team_subtitle">Quantum mechanics</div>
-							<div class="social_list">
-								<ul>
-									<li><a target="_blank" href="https://ko-kr.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-									<li><a target="_blank" href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-									<li><a target="_blank" href="https://plus.google.com/discover"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Team Item -->
-				<div class="col-lg-3 col-md-6 team_col">
-					<div class="team_item">
-						<div class="team_image"><img src="images/team_4.jpg" alt=""></div>
-						<div class="team_body">
-							<div class="team_title"><a href="#">Veronica Vahn</a></div>
-							<div class="team_subtitle">Math & Physics</div>
-							<div class="social_list">
-								<ul>
-									<li><a href="https://ko-kr.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-									<li><a href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-									<li><a href="https://plus.google.com/discover"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-
 			</div>
 		</div>
 	</div>
@@ -699,9 +583,9 @@
 											<li><a href="index.html">Home</a></li>
 											<li><a href="about.html">About</a></li>
 											<li><a href="contact.html">Contact</a></li>
-											<li><a href="#">Features</a></li>
+											<!--<li><a href="#">Features</a></li> -->
 											<li><a href="courses.html">Courses</a></li>
-											<li><a href="#">Events</a></li>
+											<li><a href="blog.html">Blog</a></li>
 											<!-- <li><a href="#">Gallery</a></li> -->
 											<li><a href="#">FAQs</a></li>
 										</ul>
@@ -727,23 +611,6 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="row copyright_row">
-				<div class="col">
-					<div class="copyright d-flex flex-lg-row flex-column align-items-center justify-content-start">
-						<div class="cr_text"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
-						<div class="ml-lg-auto cr_links">
-							<ul class="cr_list">
-								<li><a href="#">Copyright notification</a></li>
-								<li><a href="#">Terms of Use</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
 		</div>
 	</footer>
 </div>
@@ -765,123 +632,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
 	
 <script>
-var contractAddress = '0xdb0ba1df95091b36d2654e2f316f5b5e5f5aeabe'; //비디오 업로드 + 토큰
-	var abi = [ { "constant": false, "inputs": [ { "name": "_spender", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "approve", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_name", "type": "string" } ], "name": "createPerson", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_key", "type": "bytes32" } ], "name": "payForCourse", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "transfer", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_from", "type": "address" }, { "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "transferFrom", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [ { "name": "_video", "type": "string" }, { "name": "_title", "type": "string" }, { "name": "_summary", "type": "string" }, { "name": "_price", "type": "uint16" } ], "name": "uploadVideo", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "inputs": [ { "name": "CEOaddress", "type": "address" } ], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [ { "indexed": true, "name": "_from", "type": "address" }, { "indexed": true, "name": "_to", "type": "address" }, { "indexed": false, "name": "_value", "type": "uint256" } ], "name": "Transfer", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": true, "name": "_owner", "type": "address" }, { "indexed": true, "name": "_spender", "type": "address" }, { "indexed": false, "name": "_value", "type": "uint256" } ], "name": "Approval", "type": "event" }, { "constant": true, "inputs": [ { "name": "_owner", "type": "address" }, { "name": "_spender", "type": "address" } ], "name": "allowance", "outputs": [ { "name": "remaining", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "address" }, { "name": "", "type": "address" } ], "name": "allowed", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_owner", "type": "address" } ], "name": "balanceOf", "outputs": [ { "name": "balance", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "address" } ], "name": "balances", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "ceoAddress", "outputs": [ { "name": "", "type": "address" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_key", "type": "bytes32" } ], "name": "checkMyCourse", "outputs": [ { "name": "", "type": "bool" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "decimals", "outputs": [ { "name": "", "type": "uint8" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getMyClass", "outputs": [], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getMyLecture", "outputs": [], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_key", "type": "bytes32" }, { "name": "_index", "type": "uint256" } ], "name": "getReview", "outputs": [ { "name": "", "type": "uint256" }, { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_key", "type": "bytes32" } ], "name": "getReviewNum", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_key", "type": "bytes32" } ], "name": "getVideo", "outputs": [ { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_index", "type": "uint256" } ], "name": "getVideoList", "outputs": [ { "name": "", "type": "bytes32" }, { "name": "", "type": "string" }, { "name": "", "type": "string" }, { "name": "", "type": "string" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "getVideoNum", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "name", "outputs": [ { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "symbol", "outputs": [ { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "totalSupply", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "whois", "outputs": [ { "name": "", "type": "address" } ], "payable": false, "stateMutability": "view", "type": "function" } ];
+	var contractAddress = '0x40f5389fc678f89694efb00cf534d3358c6b4ba2';
+	var abi = [ { "constant": true, "inputs": [], "name": "name", "outputs": [ { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_spender", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "approve", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "_address", "type": "address" } ], "name": "getMyLectureNum", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "totalSupply", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_from", "type": "address" }, { "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "transferFrom", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "_index", "type": "uint256" } ], "name": "getStudyList2", "outputs": [ { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "address" } ], "name": "balances", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_day", "type": "uint256" }, { "name": "_month", "type": "string" }, { "name": "_studytitle", "type": "string" }, { "name": "_sodyd", "type": "string" }, { "name": "_studyclocka", "type": "string" }, { "name": "_map", "type": "string" } ], "name": "uploadStudy", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "decimals", "outputs": [ { "name": "", "type": "uint8" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_name", "type": "string" } ], "name": "createPerson", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "_key", "type": "bytes32" } ], "name": "checkMyCourse", "outputs": [ { "name": "", "type": "bool" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_address", "type": "address" }, { "name": "_index", "type": "uint256" } ], "name": "getMyClass", "outputs": [ { "name": "", "type": "bytes32" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "", "type": "address" }, { "name": "", "type": "address" } ], "name": "allowed", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_key", "type": "bytes32" } ], "name": "getReviewStar", "outputs": [ { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_key", "type": "bytes32" } ], "name": "getVideo", "outputs": [ { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_owner", "type": "address" } ], "name": "balanceOf", "outputs": [ { "name": "balance", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_key", "type": "bytes32" } ], "name": "getReviewNum", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "symbol", "outputs": [ { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" } ], "name": "transfer", "outputs": [ { "name": "success", "type": "bool" } ], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "getVideoNum", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_address", "type": "address" } ], "name": "getMyClassNum", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_address", "type": "address" }, { "name": "_index", "type": "uint256" } ], "name": "getMyLecture", "outputs": [ { "name": "", "type": "bytes32" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_video", "type": "string" }, { "name": "_category", "type": "string" }, { "name": "_title", "type": "string" }, { "name": "_summary", "type": "string" }, { "name": "_price", "type": "uint16" } ], "name": "uploadVideo", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "getPersonNum", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_key", "type": "bytes32" }, { "name": "_star", "type": "uint8" }, { "name": "_content", "type": "string" } ], "name": "setReview", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [ { "name": "_key", "type": "bytes32" }, { "name": "_index", "type": "uint256" } ], "name": "getReview", "outputs": [ { "name": "", "type": "uint256" }, { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_key", "type": "bytes32" } ], "name": "getVideoDetail", "outputs": [ { "name": "", "type": "string" }, { "name": "", "type": "string" }, { "name": "", "type": "string" }, { "name": "", "type": "string" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" }, { "name": "", "type": "address" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_owner", "type": "address" }, { "name": "_spender", "type": "address" } ], "name": "allowance", "outputs": [ { "name": "remaining", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_index", "type": "uint256" } ], "name": "getVideoList", "outputs": [ { "name": "", "type": "bytes32" }, { "name": "", "type": "string" }, { "name": "", "type": "string" }, { "name": "", "type": "string" }, { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_add", "type": "address" } ], "name": "getTeacherTotal", "outputs": [ { "name": "", "type": "uint256" }, { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [ { "name": "_index", "type": "uint256" } ], "name": "getStudyList", "outputs": [ { "name": "", "type": "string" }, { "name": "", "type": "uint256" }, { "name": "", "type": "string" }, { "name": "", "type": "string" }, { "name": "", "type": "string" }, { "name": "", "type": "string" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [ { "name": "_key", "type": "bytes32" } ], "name": "payForCourse", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "getStudyNum", "outputs": [ { "name": "", "type": "uint256" } ], "payable": false, "stateMutability": "view", "type": "function" }, { "inputs": [ { "name": "_CEOaddress", "type": "address" } ], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [ { "indexed": true, "name": "_from", "type": "address" }, { "indexed": true, "name": "_to", "type": "address" }, { "indexed": false, "name": "_value", "type": "uint256" } ], "name": "Transfer", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": true, "name": "_owner", "type": "address" }, { "indexed": true, "name": "_spender", "type": "address" }, { "indexed": false, "name": "_value", "type": "uint256" } ], "name": "Approval", "type": "event" } ];
 	var EDBContract;
 	var EDB;
-
-var contractAddress2 = '0x669a0ddb1214d99f8899c86bc9ecbb910941e669'; //스터디 업로드	
-        var abi2= [
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "_day",
-				"type": "uint256"
-			},
-			{
-				"name": "_month",
-				"type": "string"
-			},
-			{
-				"name": "_title",
-				"type": "string"
-			},
-			{
-				"name": "_clock",
-				"type": "string"
-			},
-			{
-				"name": "_map",
-				"type": "string"
-			},
-			{
-				"name": "_text",
-				"type": "string"
-			}
-		],
-		"name": "setstudy",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getstudy",
-		"outputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			},
-			{
-				"name": "",
-				"type": "string"
-			},
-			{
-				"name": "",
-				"type": "string"
-			},
-			{
-				"name": "",
-				"type": "string"
-			},
-			{
-				"name": "",
-				"type": "string"
-			},
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [
-			{
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "studies",
-		"outputs": [
-			{
-				"name": "day",
-				"type": "uint256"
-			},
-			{
-				"name": "month",
-				"type": "string"
-			},
-			{
-				"name": "title",
-				"type": "string"
-			},
-			{
-				"name": "clock",
-				"type": "string"
-			},
-			{
-				"name": "map",
-				"type": "string"
-			},
-			{
-				"name": "text",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	}
-];
-	var studyContract;
-	var study;
 	
 	window.addEventListener('load', function() {
 
@@ -892,11 +646,10 @@ var contractAddress2 = '0x669a0ddb1214d99f8899c86bc9ecbb910941e669'; //스터디
 		} else {
 			console.log('No web3? You should consider trying MetaMask!')
 			// fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
-			window.web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+			window.web3 = new Web3(new Web3.providers.HttpProvider("https://ropsten.infura.io/v3/ae6f0ffba6464191af24a26af5d50df1"));
 		}
 	// Now you can start your app & access web3 freely:
 	startApp();
-		startApp2();
 	});
 	
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -904,29 +657,59 @@ var contractAddress2 = '0x669a0ddb1214d99f8899c86bc9ecbb910941e669'; //스터디
 	function startApp() {
 		EDBContract = web3.eth.contract(abi);
 		EDB = EDBContract.at(contractAddress);
+		getvideoValue();
+        getstudyValue();
 		getValue();
 	}
 
-	function getLink(addr) {
-		return '<a target="_blank" href=https://testnet.etherscan.io/address/' + addr + '>' + addr +'</a>';
+	function getValue(){
+		$("#milestones").append($('<div class="milestone"> </div> <div class="milestone">'));
+		
+		EDB.getStudyNum(function(e,r){
+			$("#milestones").append($('<div class="milestone"> <div class="milestone_counter" data-end-value="'+ r +'">'+ r +'</div> <div class="milestone_text">스터디 갯수</div> </div>'));
+		});
+		
+		EDB.getVideoNum(function(e,r){
+			$("#milestones").append($('<div class="milestone"> <div class="milestone_counter" data-end-value="'+ r +'">'+ r +'</div> <div class="milestone_text">교육 동영상 갯수</div> </div>'));
+		});
+			
+		EDB.getPersonNum(function(e,r){ 
+			$("#milestones").append($('<div class="milestone"> <div class="milestone_counter" data-end-value="'+ r +'">'+ r +'</div> <div class="milestone_text">회원 수</div> </div>'));
+		});
 	}
 
-	function getValue() {
+	function getvideoValue() {
 		$("#showCourses").empty();
 
-		var count = 3;
 		EDB.getVideoNum(function(e,r){
-			if(r<count) count = r;
+			for(a = r-1; a > r-4; a--){
+				if(a==-1) break;
+				else getVideo(a);
+			}
 		});
+	}
 
-		for(a = 0; a < count; a++){
-			EDB.getVideoList(a, function(e,r){
-				$("#showCourses").append($('<div class="col-lg-4 course_col"> <div class="course"> <div class="course_image"><img src="images/course_1.jpg" alt=""></div> <div class="course_body"> <h3 class="course_title"><a href="course.html">'+ r[2] +'</a></h3> <div class="course_teacher">'+ r[1] +'</div> <div class="course_text"> <p>'+ r[3] +'</p> </div> </div> <div class="course_footer"> <div class="course_footer_content d-flex flex-row align-items-center justify-content-start"> <div class="course_info"> <i class="fa fa-graduation-cap" aria-hidden="true"></i> <span>'+ 0 +'</span> </div> <div class="course_info"> <i class="fa fa-star" aria-hidden="true"></i> <span>'+ 0 +' Ratings</span> </div> <div class="course_price ml-auto">'+ r[4] +'</div> </div> </div> </div> </div>'))
-			});
-		}
-		web3.eth.getBlockNumber(function(e,r){
-                document.getElementById('lastBlock').innerHTML = r;
-                                                     });
+	function getVideo(a){
+		EDB.getVideoList(a, function(e,r){
+			$("#showCourses").append($('<div class="col-lg-4 course_col"> <div class="course"> <div class="course_image"><img src="images/course_1.jpg" alt=""></div> <div class="course_body"> <h3 class="course_title"><a href="javascript:viewDetail(\'' + r[0] +'\')" >'+ r[2] +'</a></h3> <div class="course_teacher">'+ r[1] +'</div> <div class="course_text"> <p>'+ r[3] +'</p> </div> </div> <div class="course_footer"> <div class="course_footer_content d-flex flex-row align-items-center justify-content-start"> <div class="course_info"> <i class="fa fa-graduation-cap" aria-hidden="true"></i> <span>'+ r[5] +'</span> </div> <div class="course_info"> <i class="fa fa-star" aria-hidden="true"></i> <span>'+ 0 +' Ratings</span> </div> <div class="course_price ml-auto">EDB '+ r[4] +'</div> </div> </div> </div> </div>'))
+		});
+	}
+  
+  	function getstudyValue() {
+		$("#showStudies").empty();
+
+		EDB.getStudyNum(function(e,r){
+			for(a = r-1; a > r-4; a--){
+				if(a==-1) break;
+				else getStudy(a);
+			}
+		});
+	}
+
+	function getStudy(a){
+		EDB.getStudyList(a, function(e,r){
+			$("#showStudies").append($('<div class="col-lg-4 event_col"><div class="event event_left"><div class="event_image"><img src="images/event_1.jpg" alt=""></div><div class="event_body d-flex flex-row align-items-start justify-content-start"><div class="event_date"><div class="d-flex flex-column align-items-center justify-content-center trans_200"><div class="event_day trans_200">'+r[1]+'</div> <div class="event_month trans_200">'+r[2]+'</div></div></div><div class="event_content"><div class="event_title"><a href="javascript:viewBlog(\'' + a +'\')" >'+ r[3] +'</a></div><div class="event_info_container"><div class="event_info"><i class="fa fa-clock-o" aria-hidden="true"></i><span>'+r[4]+'</span></div><div class="event_info"><i class="fa fa-map-marker" aria-hidden="true"></i><span>'+r[5]+'</span></div></div></div></div></div></div>'))
+		}); 
 	}
 
 	function setName(){
@@ -943,7 +726,8 @@ var contractAddress2 = '0x669a0ddb1214d99f8899c86bc9ecbb910941e669'; //스터디
 		filter.watch(function(e, r) {
 			web3.eth.getTransaction(txid, function(e,r){
 				if (r != null && r.blockNumber > 0) {
-					document.getElementById('myName').value = "";
+					alert("정보가 등록되었습니다.");
+					window.location = "index.html";
 					filter.stopWatching();
 				}
 			});
@@ -951,6 +735,14 @@ var contractAddress2 = '0x669a0ddb1214d99f8899c86bc9ecbb910941e669'; //스터디
 		
 	}
 
+	function viewDetail(obj){
+		window.location = "course.html?" + obj;
+	}
+
+	function viewBlog(obj){
+		window.location = "blog_single.html?" + obj;
+	}
+	
 </script>
 	
 </html>
